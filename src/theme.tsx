@@ -19,7 +19,6 @@ declare module "@mui/material/styles" {
 const yesevaFont = "Yeseva One, sans-serif";
 const montserratFont = "Montserrat, sans-serif";
 // Function to create a theme based on the mode
-
 const getTheme = (mode: any) =>
   createTheme({
     palette: {
@@ -112,14 +111,15 @@ const getTheme = (mode: any) =>
       MuiToggleButton: {
         styleOverrides: {
           root: {
-            color: "#fff",
-            border: "none",
-            "&.Mui-selected": {
-              backgroundColor: "#555",
-              color: "#fff",
+            color: "#FFFFFF", // White text
+            backgroundColor: "transparent",
+            border: "1px solid #9cbf50", // Light Green
+            "&.Mui-selected, &.Mui-selected:hover": {
+              backgroundColor: "#76992a", // Matcha green
+              color: "#FFFFFF",
             },
             "&:hover": {
-              backgroundColor: "#444",
+              backgroundColor: "#9cbf50", // Light Green
             },
           },
         },

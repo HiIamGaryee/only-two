@@ -255,7 +255,9 @@ const AboutUs = () => {
                   rows={4}
                   sx={{ bgcolor: "light.main" }}
                 />
-                <Button sx={{ mt: 2 }}>Submit</Button>
+                <Button variant="contained" sx={{ mt: 2 }}>
+                  Submit
+                </Button>
               </Box>
             </Grid>
           </Grid>

@@ -226,13 +226,11 @@ const ReferralPage = () => {
                   variant="outlined"
                   fullWidth
                   sx={{
-                    backgroundColor: "#333",
-                    color: "white",
+                    bgcolor: "light.main",
                     flex: 2,
                     marginRight: 2,
                     borderRadius: 2,
                     mb: { xs: 2, md: 0 },
-                    input: { color: "white" },
                   }}
                 />
                 <Button
@@ -257,9 +255,9 @@ const ReferralPage = () => {
                   alignItems: "center",
                   mb: 4,
                   flexWrap: "wrap",
-                  backgroundColor: "#333",
                   borderRadius: 2,
-                  p: 1,
+
+                  gap: 2,
                 }}
               >
                 <TextField
@@ -269,19 +267,18 @@ const ReferralPage = () => {
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        <IconButton sx={{ color: "white" }}>
+                        <IconButton sx={{ color: "dark.main" }}>
                           <ContentCopyIcon />
                         </IconButton>
                       </InputAdornment>
                     ),
-                    sx: { color: "white" },
+                    sx: { color: "dark.main" },
                   }}
                   sx={{
                     backgroundColor: "transparent",
-                    color: "white",
+                    color: "dark.main",
                     flex: 3,
                     borderRadius: 2,
-                    input: { color: "white" },
                   }}
                 />
                 <Box

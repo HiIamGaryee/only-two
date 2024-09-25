@@ -16,19 +16,22 @@ declare module "@mui/material/styles" {
   }
 }
 
+const yesevaFont = "Yeseva One, sans-serif";
+const montserratFont = "Montserrat, sans-serif";
 // Function to create a theme based on the mode
+
 const getTheme = (mode: any) =>
   createTheme({
     palette: {
       mode,
       primary: {
-        main: mode === "light" ? "#e2994f" : "#FFFFFF", // Brown for light mode, White for dark mode
-        light: "#A67C52",
-        dark: "#6D4C41",
-        contrastText: mode === "light" ? "#FFFFFF" : "#333333", // White text on primary color in light mode, dark text in dark mode
+        main: "#76992a", // Matcha green
+        light: "#9cbf50", // Light Green
+        dark: "#383f00", // Dark green
+        contrastText: "FFFFFF",
       },
       secondary: {
-        main: mode === "light" ? "#f7f3f0" : "#676767", // Light grey for light mode, grey for dark mode
+        main: "#ebebeb", // Light grey
         light: "#FFD700",
         dark: "#8c8a88",
         contrastText: "#FFFFFF", // White text on secondary color
@@ -63,6 +66,17 @@ const getTheme = (mode: any) =>
         light: "#81c784",
         dark: "#388e3c",
       },
+    },
+    typography: {
+      fontFamily: montserratFont,
+      h1: { fontFamily: yesevaFont },
+      h2: { fontFamily: yesevaFont },
+      h3: { fontFamily: yesevaFont },
+      h4: { fontFamily: yesevaFont },
+      h5: { fontFamily: yesevaFont },
+      h6: { fontFamily: yesevaFont },
+      subtitle1: { fontFamily: yesevaFont },
+      button: { fontFamily: montserratFont },
     },
     components: {
       MuiPaper: {
@@ -112,20 +126,35 @@ const getTheme = (mode: any) =>
       },
       MuiButton: {
         styleOverrides: {
-          root: {
-            background: "#e2994f",
+          root: { fontWeight: "medium" },
+          contained: {
+            background: "#76992a",
             color: "#F5F3EF",
             borderRadius: "28px",
             "&:hover": {
-              background: "#c17d39",
+              background: "#9cbf50",
             },
             "&.Mui-disabled": {
               color: "#666",
               background: "#333333",
             },
           },
+          outlined: {
+            borderColor: "#000",
+            color: "#000",
+            "&:focus": {
+              borderColor: "#76992a",
+              color: "#76992a",
+              boxShadow: `0 0 0 1px #76992a`,
+            },
+            "&:hover": {
+              borderColor: "#c17d39",
+              color: "#76992a",
+            },
+          },
         },
       },
+
       MuiCard: {
         styleOverrides: {
           root: {

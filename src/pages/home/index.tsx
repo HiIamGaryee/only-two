@@ -7,6 +7,7 @@ import {
   InputAdornment,
   Typography,
   Stack,
+  Button,
 } from "@mui/material";
 import SearchIcon from "../../assets/icons/icon-search.svg";
 import MovieTrendList from "../../components/movie-list/movieTrendList";

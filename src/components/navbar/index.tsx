@@ -64,8 +64,8 @@ const Navbar = () => {
   return (
     <AppBar
       position="static"
-      color="primary"
-      sx={{ backgroundColor: "primary.main" }}
+      // color="primary"
+      sx={{ bgcolor: "primary.main" }}
     >
       <Toolbar>
         <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
@@ -82,7 +82,7 @@ const Navbar = () => {
               to={item.link}
               style={({ isActive }) => ({
                 textDecoration: "none",
-                color: isActive ? "#4caf50" : "inherit",
+                color: isActive ? "#383f00" : "#ebebeb",
                 display: "flex",
                 alignItems: "center",
                 marginRight: 4,
@@ -90,7 +90,13 @@ const Navbar = () => {
               onClick={item.onClick ? item.onClick : undefined}
             >
               {item.icon}
-              <Typography sx={{ ml: 1, display: { xs: "none", sm: "block" } }}>
+              <Typography
+                sx={{
+                  ml: 1,
+                  display: { xs: "none", sm: "block" },
+                  // color: isActive ? "#383f00" : "#ebebeb",
+                }}
+              >
                 {item.name}
               </Typography>
             </NavLink>

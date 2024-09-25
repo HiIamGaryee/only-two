@@ -48,7 +48,7 @@ const UpcomingCard: React.FC<UpcomingCardProps> = ({
         <Chip
           label={category}
           sx={{
-            backgroundColor: "#ff9800",
+            bgcolor: "warning.main",
             color: "light.main",
             mb: 1,
           }}
@@ -63,10 +63,7 @@ const UpcomingCard: React.FC<UpcomingCardProps> = ({
         <Typography variant="body2" sx={{ mt: 2 }}>
           {price}
         </Typography>
-        <Button
-          variant="contained"
-          sx={{ mt: 2, backgroundColor: "#ff9800", color: "light.main" }}
-        >
+        <Button variant="contained" sx={{ mt: 2 }}>
           Learn More
         </Button>
       </CardContent>

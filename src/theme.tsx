@@ -111,15 +111,15 @@ const getTheme = (mode: any) =>
       MuiToggleButton: {
         styleOverrides: {
           root: {
-            color: "#FFFFFF", // White text
+            color: "#FFFFFF",
             backgroundColor: "transparent",
-            border: "1px solid #9cbf50", // Light Green
+            border: "1px solid #9cbf50",
             "&.Mui-selected, &.Mui-selected:hover": {
-              backgroundColor: "#76992a", // Matcha green
+              backgroundColor: "#76992a",
               color: "#FFFFFF",
             },
             "&:hover": {
-              backgroundColor: "#9cbf50", // Light Green
+              backgroundColor: "#9cbf50",
             },
           },
         },

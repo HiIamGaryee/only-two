@@ -65,11 +65,6 @@ const services = [
 ];
 
 const AboutUs = () => {
-  const { data: aboutData } = useQuery({
-    queryKey: ["aboutUs"],
-    queryFn: getAboutUs,
-  });
-
   return (
     <Layout>
       <Box

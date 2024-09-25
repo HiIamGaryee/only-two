@@ -90,7 +90,7 @@ const PackagePage = () => {
           fontWeight="bold"
           sx={{ mb: 2 }}
         >
-          Join over 1 Million user using Brewed in chaos
+          Join over 1 Million user using Only Two
         </Typography>
         <Typography variant="body1" align="center" sx={{ mb: 4 }}>
           <span>14-day free trial</span> • <span>Cancel anytime</span> •{" "}

@@ -108,7 +108,7 @@ const Footer = () => {
       </Box>
       <Box sx={{ width: "100%", mt: 4, textAlign: "center" }}>
         <Typography variant="body2" sx={{ color: "white" }}>
-          © 2024 All rights reserved by Brewed in chaos Sdn Bhd.
+          © 2024 All rights reserved by Only Two Sdn Bhd.
         </Typography>
       </Box>
     </Box>

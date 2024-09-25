@@ -1,7 +1,10 @@
-# brewed-in-chaos 
+# only-two
 
-A coffee shop webpage which involved Web3 and AI by ---> Team COMPILE TIME CHAOS
-This project was created by React, Mui and cosmocloud (as backend).
+Our website enhances user engagement through a Rewards Membership program, where users earn points for eco-friendly activities. These points can be redeemed for gifts from our partners, who are showcased on the platform. This system not only encourages sustainable practices but also offers partners a direct channel to promote their eco-conscious products to an engaged audience.
+
+For our partners, the site offers a strategic advertising opportunity. By collaborating with us, businesses can enhance their visibility and connect with consumers deeply committed to environmental sustainability. This partnership not only boosts brand recognition but also supports our collective mission of promoting greener lifestyles.
+
+This project was created by React ,tsx and using Mui which had frontend only.
 
 ## Available Scripts
 
@@ -45,9 +48,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-## Check this Out Now
-
-1.Learn React, Typescript & Material UI With One Project | Build a Movie App in 90 Minutes
-
-https://www.youtube.com/watch?v=uGnh1NnlEbQ

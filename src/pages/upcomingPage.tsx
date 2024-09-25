@@ -6,12 +6,12 @@ import {
   ToggleButton,
   ToggleButtonGroup,
 } from "@mui/material";
-import UpcomingCard from "../../components/UpcomingCard";
-import Layout from "../../Layout";
-import upcomingOne from "../../assets/upcoming1.jpeg";
-import upcomingTwo from "../../assets/upcoming2.jpg";
-import upcomingThree from "../../assets/upcoming3.jpeg";
-import upcomingFour from "../../assets/upcoming4.jpeg";
+import UpcomingCard from "../components/UpcomingCard";
+import Layout from "../Layout";
+import upcomingOne from "../assets/upcoming1.jpeg";
+import upcomingTwo from "../assets/upcoming2.jpg";
+import upcomingThree from "../assets/upcoming3.jpeg";
+import upcomingFour from "../assets/upcoming4.jpeg";
 
 const events = [
   {
@@ -48,7 +48,7 @@ const events = [
   },
 ];
 
-const UpcomingPage = () => {
+export const UpcomingPage = () => {
   const [selectedCategory, setSelectedCategory] = React.useState<string | null>(
     "All"
   );

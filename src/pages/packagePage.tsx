@@ -10,7 +10,7 @@ import {
   ToggleButtonGroup,
   ToggleButton,
 } from "@mui/material";
-import Layout from "../../Layout";
+import Layout from "../Layout";
 
 const packageList = [
   {

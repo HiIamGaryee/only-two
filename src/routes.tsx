@@ -13,10 +13,10 @@ import ProtectedRoute from "./ProtectedRoute";
 import AboutUs from "./pages/about-us.tsx";
 import Faq from "./pages/faq.tsx";
 import ReferralPage from "./pages/referral.tsx";
-import PackagePage from "./pages/package.tsx";
 import ServicesPage from "./pages/services.tsx";
-import UpcomingPage from "./pages/upcomingPage.tsx";
 import WizardzPage from "./pages/landings/wizardz";
+import PackagePage from "./pages/packagePage";
+import UpcomingPage from "./pages/upcomingPage";
 
 // Layout component that specifies the default error element
 const Layout = () => {

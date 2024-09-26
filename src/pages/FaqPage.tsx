@@ -7,7 +7,7 @@ import {
   AccordionDetails,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Layout from "../../Layout";
+import Layout from "../Layout";
 
 const faqList = [
   {
@@ -52,7 +52,7 @@ const faqList = [
   },
 ];
 
-const Faq = () => {
+const FaqPage = () => {
   const [expanded, setExpanded] = useState<string | false>(false);
 
   const handleChange =
@@ -107,4 +107,4 @@ const Faq = () => {
   );
 };
 
-export default Faq;
+export default FaqPage;

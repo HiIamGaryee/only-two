@@ -14,15 +14,15 @@ import {
   Tabs,
   Tab,
 } from "@mui/material";
-import Layout from "../../Layout";
+import Layout from "../Layout";
 import HttpsRoundedIcon from "@mui/icons-material/HttpsRounded";
-import { ReactComponent as ReferralGiftIcon } from "../../assets/icons/cute/gift-svgrepo-com.svg";
-import { ReactComponent as ReferralCuponsIcon } from "../../assets/icons/cute/coupons-svgrepo-com.svg";
+import { ReactComponent as ReferralGiftIcon } from "../assets/icons/cute/gift-svgrepo-com.svg";
+import { ReactComponent as ReferralCuponsIcon } from "../assets/icons/cute/coupons-svgrepo-com.svg";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { ReactComponent as ReferralCardIcon } from "../../assets/icons/cute/card-holder-svgrepo-com.svg";
-// import { ReactComponent as ReferralCardIcon } from "../../assets/icons/icon-world-cube.svg";
+import { ReactComponent as ReferralCardIcon } from "../assets/icons/cute/card-holder-svgrepo-com.svg";
+// import { ReactComponent as ReferralCardIcon } from "../assets/icons/icon-world-cube.svg";
 
 const referralSwagList = [
   {

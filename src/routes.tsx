@@ -11,12 +11,16 @@ import Profile from "./pages/profile";
 import { AuthProvider } from "./AuthProvider";
 import ProtectedRoute from "./ProtectedRoute";
 import AboutUs from "./pages/about-us.tsx";
-import Faq from "./pages/faq.tsx";
-import ReferralPage from "./pages/referral.tsx";
 import ServicesPage from "./pages/services.tsx";
 import WizardzPage from "./pages/landings/wizardz";
 import PackagePage from "./pages/packagePage";
 import UpcomingPage from "./pages/upcomingPage";
+import TnCPage from "./pages/TnCPage";
+import BlogPage from "./pages/BlogPage";
+import RewardsPage from "./pages/RewardsPage";
+import DirectoryPage from "./pages/DirectoryPage";
+import ReferralPage from "./pages/ReferralPage";
+import FaqPage from "./pages/FaqPage";
 
 // Layout component that specifies the default error element
 const Layout = () => {
@@ -40,12 +44,16 @@ export const router = createBrowserRouter([
       { path: "/tv-series", element: <TvSeries /> },
       { path: "/bookmarks", element: <Bookmark /> },
       { path: "/about-us", element: <AboutUs /> },
-      { path: "/faq", element: <Faq /> },
+      { path: "/faq", element: <FaqPage /> },
       { path: "/referral", element: <ReferralPage /> },
       { path: "/package", element: <PackagePage /> },
       { path: "/services", element: <ServicesPage /> },
       { path: "/upcoming-movies", element: <UpcomingPage /> },
+      { path: "/terms-and-conditions", element: <TnCPage /> },
+      { path: "/blog", element: <BlogPage /> },
       { path: "/wizardz", element: <WizardzPage /> },
+      { path: "/rewards", element: <RewardsPage /> },
+      { path: "/recycling-directory", element: <DirectoryPage /> },
       {
         path: "/member/profile",
         element: (

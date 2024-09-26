@@ -18,6 +18,15 @@ const footerLinks = [
       { name: "Package", link: "/package" },
       { name: "FAQ", link: "/faq" },
       { name: "Referral", link: "/referral" },
+      { name: "Terms and Conditions", link: "/terms-and-conditions" },
+    ],
+  },
+  {
+    title: "News Page",
+    links: [
+      { name: "Rewards", link: "/rewards" },
+      { name: "Blog", link: "/blog" },
+      { name: "Recycling Directory", link: "/recycling-directory" },
     ],
   },
 ];
@@ -28,7 +37,7 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#161d2f",
+        bgcolor: "dark.main",
         padding: 4,
         display: "flex",
         justifyContent: "space-between",

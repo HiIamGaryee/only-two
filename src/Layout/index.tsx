@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { Box } from "@mui/material";
 import Sidebar from "../components/sidebar";
 import Footer from "../components/Footer";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 // import Navbar from "../components/navbar";
 
 interface LayoutProps {

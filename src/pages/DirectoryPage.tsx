@@ -7,7 +7,7 @@ export const DirectoryPage = () => {
   return (
     <Layout>
       <Typography variant="h3" align="center" fontWeight="bold" sx={{ mb: 2 }}>
-        Rewards Page
+        Recycling Directory
       </Typography>
     </Layout>
   );

@@ -9,13 +9,14 @@ const footerLinks = [
       { name: "Services", link: "/services" },
       // { name: "Blog", link: "/blog" },
       { name: "Upcoming Movies", link: "/upcoming-movies" },
+      { name: "Package", link: "/package" },
     ],
   },
   {
     title: "HELP",
     links: [
       // { name: "Getting started", link: "/getting-started" },
-      { name: "Package", link: "/package" },
+      { name: "Collaboration", link: "/collaboration" },
       { name: "FAQ", link: "/faq" },
       { name: "Referral", link: "/referral" },
       { name: "Terms and Conditions", link: "/terms-and-conditions" },
@@ -53,33 +54,38 @@ const Footer = () => {
         alt="Logo"
         style={{ maxHeight: 50, marginRight: 16 }}
       />
-      {footerLinks.map((section) => (
-        <Box key={section.title} sx={{ flex: 1, minWidth: 200 }}>
-          <Typography variant="h6" sx={{ mb: 2, color: "white" }}>
-            {section.title}
-          </Typography>
-          {section.links.map((item) => (
-            <Link
-              key={item.name}
-              to={item.link}
-              style={{ textDecoration: "none" }}
-            >
-              <Typography
-                variant="body2"
-                sx={{
-                  color: "light.main",
-                  mb: 1,
-                  "&:hover": {
-                    color: "#4caf50",
-                  },
-                }}
+      <Box sx={{ display: "flex", flexDirection: "row" }}>
+        {footerLinks.map((section) => (
+          <Box
+            key={section.title}
+            sx={{ flex: 1, minWidth: 200, alignItems: "strat" }}
+          >
+            <Typography variant="h6" sx={{ mb: 2, color: "white" }}>
+              {section.title}
+            </Typography>
+            {section.links.map((item) => (
+              <Link
+                key={item.name}
+                to={item.link}
+                style={{ textDecoration: "none" }}
               >
-                {item.name}
-              </Typography>
-            </Link>
-          ))}
-        </Box>
-      ))}
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "light.main",
+                    mb: 1,
+                    "&:hover": {
+                      color: "#4caf50",
+                    },
+                  }}
+                >
+                  {item.name}
+                </Typography>
+              </Link>
+            ))}
+          </Box>
+        ))}
+      </Box>
       <Box sx={{ flex: 1, minWidth: 200 }}>
         <Typography variant="h6" sx={{ mb: 2, color: "white" }}>
           SUBSCRIBE
@@ -105,13 +111,19 @@ const Footer = () => {
         </Box>
         <Box sx={{ display: "flex", gap: 1 }}>
           <Link to="#" style={{ textDecoration: "none", color: "white" }}>
-            <Typography variant="body2">Facebook</Typography>
+            <Typography variant="body2" color="light.main">
+              Facebook
+            </Typography>
           </Link>
           <Link to="#" style={{ textDecoration: "none", color: "white" }}>
-            <Typography variant="body2">Twitter</Typography>
+            <Typography variant="body2" color="light.main">
+              Twitter
+            </Typography>
           </Link>
           <Link to="#" style={{ textDecoration: "none", color: "white" }}>
-            <Typography variant="body2">LinkedIn</Typography>
+            <Typography variant="body2" color="light.main">
+              LinkedIn
+            </Typography>
           </Link>
         </Box>
       </Box>

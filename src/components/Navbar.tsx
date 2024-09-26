@@ -8,7 +8,7 @@ import BookmarksRoundedIcon from "@mui/icons-material/BookmarksRounded";
 import LiveTvRoundedIcon from "@mui/icons-material/LiveTvRounded";
 import CottageRoundedIcon from "@mui/icons-material/CottageRounded";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
-import { useAuth } from "../../AuthProvider";
+import { useAuth } from "../AuthProvider";
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
@@ -31,16 +31,6 @@ const Navbar = () => {
       name: "Movies",
       icon: <LocalMoviesRoundedIcon />,
       link: "/movies",
-    },
-    {
-      name: "TV Series",
-      icon: <LiveTvRoundedIcon />,
-      link: "/tv-series",
-    },
-    {
-      name: "Bookmarks",
-      icon: <BookmarksRoundedIcon />,
-      link: "/bookmarks",
     },
     {
       name: "Profile",

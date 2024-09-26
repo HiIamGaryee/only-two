@@ -9,7 +9,7 @@ import {
   CardContent,
 } from "@mui/material";
 import React from "react";
-import Layout from "../../Layout";
+import Layout from "../Layout";
 import { Phone, Email, Instagram, LocationOn } from "@mui/icons-material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -19,7 +19,7 @@ import MarketingIcon from "@mui/icons-material/LocalOffer";
 import BusinessIcon from "@mui/icons-material/BusinessCenter";
 import CreativeIcon from "@mui/icons-material/Brush";
 import WebIcon from "@mui/icons-material/Web";
-import { getAboutUs } from "../../api";
+import { getAboutUs } from "../api";
 import { useQuery } from "@tanstack/react-query";
 
 const contactList = [
@@ -64,7 +64,7 @@ const services = [
   },
 ];
 
-const AboutUs = () => {
+const AboutUsPage = () => {
   return (
     <Layout>
       <Box
@@ -262,4 +262,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default AboutUsPage;

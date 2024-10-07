@@ -1,5 +1,6 @@
 # only-two
 🔗 : https://gogreen.vercel.app/
+
 Our website enhances user engagement through a Rewards Membership program, where users earn points for eco-friendly activities. These points can be redeemed for gifts from our partners, who are showcased on the platform. This system not only encourages sustainable practices but also offers partners a direct channel to promote their eco-conscious products to an engaged audience.
 
 For our partners, the site offers a strategic advertising opportunity. By collaborating with us, businesses can enhance their visibility and connect with consumers deeply committed to environmental sustainability. This partnership not only boosts brand recognition but also supports our collective mission of promoting greener lifestyles.

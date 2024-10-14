@@ -13,82 +13,83 @@ import SearchIcon from "@mui/icons-material/Search";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import { useTranslation } from "react-i18next";
 import { LatLngExpression } from "leaflet";
+
 const recyclingSectors = [
   {
-    title: "Plastic Recycling",
-    description: "Turn your plastic waste into valuable resources.",
+    title: "plastic_recycling",
+    description: "plastic_recycling_desc",
     position: L.latLng(51.5074, -0.1278), // Central London
   },
   {
-    title: "Organic Composting",
-    description: "Create compost for agricultural use from organic waste.",
+    title: "organic_composting",
+    description: "organic_composting_desc",
     position: L.latLng(51.5126, -0.1116), // Hyde Park
   },
   {
-    title: "Electronic Disposal",
-    description: "Safely dispose of electronic waste.",
+    title: "electronic_disposal",
+    description: "electronic_disposal_desc",
     position: L.latLng(51.5205, -0.093), // Shoreditch
   },
   {
-    title: "Metal Recycling",
-    description: "Recycle metals to reduce the environmental impact of mining.",
+    title: "metal_recycling",
+    description: "metal_recycling_desc",
     position: L.latLng(51.5285, -0.0847), // Camden
   },
   {
-    title: "Paper Recycling",
-    description: "Help reduce deforestation by recycling paper products.",
+    title: "paper_recycling",
+    description: "paper_recycling_desc",
     position: L.latLng(51.5028, -0.0877), // The Shard
   },
   {
-    title: "Glass Recycling",
-    description: "Recycle glass to save energy and raw materials.",
+    title: "glass_recycling",
+    description: "glass_recycling_desc",
     position: L.latLng(51.5099, -0.1342), // Oxford Street
   },
   {
-    title: "Clothing Recycling",
-    description: "Give old clothes a new life and help those in need.",
+    title: "clothing_recycling",
+    description: "clothing_recycling_desc",
     position: L.latLng(51.5299, -0.0707), // Hackney
   },
   {
-    title: "Furniture Recycling",
-    description: "Donate old furniture to extend its life.",
+    title: "furniture_recycling",
+    description: "furniture_recycling_desc",
     position: L.latLng(51.5407, -0.1436), // Hampstead
   },
   {
-    title: "Battery Recycling",
-    description:
-      "Proper disposal of batteries to prevent environmental contamination.",
+    title: "battery_recycling",
+    description: "battery_recycling_desc",
     position: L.latLng(51.5161, -0.1048), // Holborn
   },
   {
-    title: "Automotive Recycling",
-    description: "Responsible recycling of automotive parts and fluids.",
+    title: "automotive_recycling",
+    description: "automotive_recycling_desc",
     position: L.latLng(51.4851, -0.1749), // Kensington
   },
   {
-    title: "Chemical Disposal",
-    description: "Safe disposal of hazardous household chemicals.",
+    title: "chemical_disposal",
+    description: "chemical_disposal_desc",
     position: L.latLng(51.4941, -0.1749), // Chelsea
   },
   {
-    title: "Construction Waste Recycling",
-    description: "Reprocess construction waste for new building materials.",
+    title: "construction_waste_recycling",
+    description: "construction_waste_recycling_desc",
     position: L.latLng(51.513, -0.0983), // The City
   },
   {
-    title: "Food Waste Recycling",
-    description: "Turn your food scraps into compost for community gardens.",
+    title: "food_waste_recycling",
+    description: "food_waste_recycling_desc",
     position: L.latLng(51.508, -0.1281), // Victoria
   },
   {
-    title: "Tyre Recycling",
-    description: "Recycle used tyres to create rubber mulch for playgrounds.",
+    title: "tyre_recycling",
+    description: "tyre_recycling_desc",
     position: L.latLng(51.5096, -0.1967), // Notting Hill
   },
   {
-    title: "Biodegradable Materials Processing",
-    description: "Process biodegradable materials to minimize landfill use.",
+    title: "biodegradable_materials_processing",
+    description: "biodegradable_materials_processing_desc",
     position: L.latLng(51.5004, -0.1784), // Buckingham Palace area
   },
 ];
@@ -96,7 +97,7 @@ const recyclingSectors = [
 const DirectoryPage = () => {
   const center = L.latLng(51.5079, -0.0877);
   const mapRef = useRef<L.Map | null>(null);
-
+  const { t } = useTranslation();
   const handleMarkerClick = (position: any) => {
     const map = mapRef.current;
     if (map) {
@@ -116,12 +117,12 @@ const DirectoryPage = () => {
       >
         <Box sx={{ maxWidth: 1200, margin: "auto", textAlign: "center" }}>
           <Typography variant="h4" gutterBottom fontWeight="bold">
-            Recycling Directory
+            {t("recycling_directory")}
           </Typography>
           <TextField
             fullWidth
             variant="outlined"
-            placeholder="Search recycling centers or areas"
+            placeholder={t("search_recycle_area")}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -152,9 +153,9 @@ const DirectoryPage = () => {
                 }}
               >
                 <Popup>
-                  {sector.title}
+                  {t(sector.title)}
                   <br />
-                  {sector.description}
+                  {t(sector.description)}
                 </Popup>
               </Marker>
             ))}
@@ -174,10 +175,10 @@ const DirectoryPage = () => {
                 >
                   <CardContent>
                     <Typography variant="h5" component="div">
-                      {sector.title}
+                      {t(sector.title)}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" mt={2}>
-                      {sector.description}
+                      {t(sector.description)}
                     </Typography>
                   </CardContent>
                 </Card>

@@ -1,5 +1,6 @@
 {
     "welcome_desc": "Welcome to React",
     "sign_in_desc": "Sign In Now",
-    "profile": "Profile"
+    "profile": "Profile",
+    "service_we_provide":"service_we_provide"
   }

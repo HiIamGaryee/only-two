@@ -10,7 +10,6 @@ import CottageRoundedIcon from "@mui/icons-material/CottageRounded";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import { useAuth } from "../AuthProvider";
 import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "./language";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -93,7 +92,7 @@ const Navbar = () => {
               </Typography>
             </NavLink>
           ))}
-          <LanguageSwitcher />
+          {/* <LanguageSwitcher /> */}
         </Box>
       </Toolbar>
     </AppBar>

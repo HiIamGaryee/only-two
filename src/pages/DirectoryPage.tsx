@@ -115,7 +115,7 @@ const DirectoryPage = () => {
   const handleMarkerClick = (position: any) => {
     const map = mapRef.current;
     if (map) {
-      map.flyTo(position, 15); // Fly to the marker position at zoom level 15
+      map.flyTo(position, 15);
     }
   };
 

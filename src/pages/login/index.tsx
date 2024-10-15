@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -10,14 +11,20 @@ import {
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import { LoginParams, postLogin } from "../../api"; // Adjust the path as necessary
+import { useAuth } from "../../AuthProvider"; // Use the Auth context here
 import loginBg from "../../assets/login-bg.jpg";
-import { useAppMutation } from "../../hooks/useAppMutation";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+
+interface LoginParams {
+  email: string;
+  password: string;
+}
 
 const Login = () => {
   const { t } = useTranslation();
-
+  const { login } = useAuth();
+  const navigate = useNavigate();
   const validationSchema = Yup.object({
     email: Yup.string()
       .required("Email is required")
@@ -32,11 +39,18 @@ const Login = () => {
   } = useForm<LoginParams>({
     resolver: yupResolver(validationSchema),
   });
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  const { mutate } = useAppMutation(postLogin);
-
-  const onSubmit = (data: LoginParams) => {
-    mutate(data);
+  const onSubmit = async (data: LoginParams) => {
+    try {
+      await login(data); // Use the hardcoded login function
+      navigate("/member/profile"); // Navigate to the profile page after successful login
+      console.log("Login successful");
+    } catch (error) {
+      console.error("Login failed");
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 3000);
+    }
   };
 
   return (
@@ -77,15 +91,24 @@ const Login = () => {
               type="email"
               fullWidth
               error={Boolean(errors.email)}
-              helperText={errors.email ? errors.email.message : ""}
+              helperText={
+                errors.email
+                  ? errors.email.message
+                  : "Tester: user123@gmail.com"
+              }
               variant="outlined"
             />
             <TextField
               {...register("password")}
               placeholder="Password"
               fullWidth
+              type="password"
               error={Boolean(errors.password)}
-              helperText={errors.password ? errors.password.message : ""}
+              helperText={
+                errors.password
+                  ? errors.password.message
+                  : "Tester: password123"
+              }
               variant="outlined"
             />
 
@@ -94,15 +117,29 @@ const Login = () => {
             </Button>
           </Stack>
           <Box mt={2} sx={{ display: "flex", flexDirection: "column" }}>
-            <Link href="#" underline="hover" sx={{ color: "#000" }}>
+            {/* <Link href="#" underline="hover" sx={{ color: "#000" }}>
               Forgot Password
-            </Link>
+            </Link> */}
             <Link href="/sign-up" underline="hover" sx={{ color: "#000" }}>
               Don't have an account? Sign up
             </Link>
           </Box>
         </form>
       </Paper>
+      {showSuccess && (
+        <Paper
+          elevation={4}
+          sx={{
+            position: "absolute",
+            bottom: 120,
+            right: 16,
+            padding: 2,
+            borderRadius: "8px",
+          }}
+        >
+          👎 Login failed
+        </Paper>
+      )}
     </Box>
   );
 };

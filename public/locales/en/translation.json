@@ -71,5 +71,11 @@
   "promo": "Promo",
   "total": "Total",
   "account_top_up_to": "Account top up to",
-  "confirm_order": "Confirm your order"
+  "confirm_order": "Confirm your order",
+  "name": "Name",
+  "position": "Position",
+  "product_designer": "Product Designer",
+  "location": "Location",
+  "edit_profile": "Edit Profile",
+  "settings": "Settings"
 }

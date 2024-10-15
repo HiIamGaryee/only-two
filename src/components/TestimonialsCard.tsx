@@ -10,6 +10,8 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import avatar from "../assets/image-avatar.png";
+import avatar2 from "../assets/image-avatar2.png";
+import avatar3 from "../assets/image-avatar3.png";
 
 // Enhanced Card with subtle shadow and hover effect
 const CustomCard = styled(Card)(({ theme }) => ({
@@ -36,15 +38,15 @@ const testimonials = [
       "The rewards system is fantastic. It makes being environmentally conscious fun and rewarding!",
     author: "Justus Menke",
     role: "Conscious Consumer",
-    avatar: avatar,
+    avatar: avatar2,
   },
   {
     id: 3,
     quote:
       "Gaining main knowledge about sustainability has never been easier. This platform is a game-changer!",
-    author: "Brittan Eriksen",
+    author: "Hayden Lee",
     role: "Sustainability Advocate",
-    avatar: avatar,
+    avatar: avatar3,
   },
 ];
 

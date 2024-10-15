@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 import axios from "axios";
-import { LoginParams, postLogin } from "./api";
 
 interface User {
   id?: string;
@@ -10,7 +9,10 @@ interface User {
 
 interface AuthContextType {
   user: User | null;
-  login: (userCredentials: LoginParams) => Promise<void>;
+  login: (userCredentials: {
+    email: string;
+    password: string;
+  }) => Promise<void>;
   logout: () => void;
 }
 
@@ -27,17 +29,22 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [user, setUser] = useState<User | null>(null);
 
-  const login = async (userCredentials: LoginParams) => {
-    try {
-      const response = await postLogin(userCredentials);
-      localStorage.setItem("token", response.token); // Store the token in localStorage
-      setUser({ ...response, token: response.token });
-      axios.defaults.headers.common[
-        "Authorization"
-      ] = `Bearer ${response.token}`; // Update Axios headers
-    } catch (error) {
-      console.error("Login error:", error);
-      throw error;
+  // Hardcoded login credentials check
+  const login = async ({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }) => {
+    if (email === "user123@gmail.com" && password === "password123") {
+      const fakeToken = "fake-token-123"; // Simulated token
+
+      localStorage.setItem("token", fakeToken); // Store the token in localStorage
+      setUser({ name: "user123", token: fakeToken });
+      axios.defaults.headers.common["Authorization"] = `Bearer ${fakeToken}`; // Update Axios headers
+    } else {
+      throw new Error("Invalid email or password"); // Throw an error for invalid credentials
     }
   };
 

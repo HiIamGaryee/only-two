@@ -42,7 +42,7 @@ const Navbar = () => {
       ? {
           name: "Logout",
           icon: <LogoutRoundedIcon />,
-          link: "/logout",
+          link: "#",
           onClick: handleLogout,
         }
       : {

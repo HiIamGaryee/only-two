@@ -25,7 +25,6 @@ import CollaborationPage from "./pages/CollaborationPage";
 import PostPage from "./pages/PostPage";
 import PaymentPage from "./pages/PaymentPage";
 
-
 const Layout = () => {
   return (
     <div>
@@ -37,7 +36,7 @@ const Layout = () => {
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />, 
+    element: <Layout />,
     errorElement: <Error />,
     children: [
       { path: "/", element: <Home /> },
@@ -58,7 +57,17 @@ export const router = createBrowserRouter([
       { path: "/blog", element: <BlogPage /> },
       { path: "/post", element: <PostPage /> },
       { path: "/wizardz", element: <WizardzPage /> },
-      { path: "/rewards", element: <RewardsPage /> },
+      { path: "/recycling-directory", element: <DirectoryPage /> },
+
+      {
+        path: "/rewards",
+        element: (
+          <ProtectedRoute>
+            {" "}
+            <RewardsPage />
+          </ProtectedRoute>
+        ),
+      },
       {
         path: "/member/profile",
         element: (

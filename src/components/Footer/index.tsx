@@ -6,35 +6,24 @@ const footerLinks = [
     title: "SITEMAP",
     links: [
       { name: "About us", link: "/about-us" },
-      { name: "Services", link: "/services" },
-      // { name: "Blog", link: "/blog" },
-      { name: "Upcoming Movies", link: "/upcoming-movies" },
       { name: "Package", link: "/package" },
+      { name: "Rewards", link: "/rewards" },
+      { name: "Blog", link: "/blog" },
     ],
   },
   {
     title: "HELP",
     links: [
-      // { name: "Getting started", link: "/getting-started" },
-      { name: "Collaboration", link: "/collaboration" },
+      { name: "Recycling Directory", link: "/recycling-directory" },
       { name: "FAQ", link: "/faq" },
       { name: "Referral", link: "/referral" },
       { name: "Terms and Conditions", link: "/terms-and-conditions" },
-    ],
-  },
-  {
-    title: "News Page",
-    links: [
-      { name: "Rewards", link: "/rewards" },
-      { name: "Blog", link: "/blog" },
-      { name: "Recycling Directory", link: "/recycling-directory" },
     ],
   },
 ];
 
 const Footer = () => {
   return (
-    // <Box>OI</Box>
     <Box
       component="footer"
       sx={{
@@ -49,87 +38,100 @@ const Footer = () => {
         maxHeight: "250px",
       }}
     >
-      <img
-        src="/logo.png"
-        alt="Logo"
-        style={{ maxHeight: 50, marginRight: 16 }}
-      />
-      <Box sx={{ display: "flex", flexDirection: "row" }}>
-        {footerLinks.map((section) => (
+      <Box
+        sx={{ display: "flex", justifyContent: "space-between", flexGrow: 1 }}
+      >
+        <Box
+          sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}
+        >
+          <img
+            src="/logo.png"
+            alt="Logo"
+            style={{ maxHeight: 50, marginRight: 16 }}
+          />
           <Box
-            key={section.title}
-            sx={{ flex: 1, minWidth: 200, alignItems: "strat" }}
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+            }}
           >
-            <Typography variant="h6" sx={{ mb: 2, color: "white" }}>
-              {section.title}
-            </Typography>
-            {section.links.map((item) => (
-              <Link
-                key={item.name}
-                to={item.link}
-                style={{ textDecoration: "none" }}
+            {footerLinks.map((section) => (
+              <Box
+                key={section.title}
+                sx={{ flex: 1, minWidth: 200, alignItems: "strat" }}
               >
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: "light.main",
-                    mb: 1,
-                    "&:hover": {
-                      color: "#4caf50",
-                    },
-                  }}
-                >
-                  {item.name}
+                <Typography variant="h6" sx={{ mb: 2, color: "white" }}>
+                  {section.title}
                 </Typography>
-              </Link>
+                {section.links.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.link}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "light.main",
+                        mb: 1,
+                        "&:hover": {
+                          color: "#4caf50",
+                        },
+                      }}
+                    >
+                      {item.name}
+                    </Typography>
+                  </Link>
+                ))}
+              </Box>
             ))}
           </Box>
-        ))}
-      </Box>
-      <Box sx={{ flex: 1, minWidth: 200 }}>
-        <Typography variant="h6" sx={{ mb: 2, color: "white" }}>
-          SUBSCRIBE
-        </Typography>
-        <Box sx={{ display: "flex", mb: 2 }}>
-          <TextField
-            variant="outlined"
-            size="small"
-            placeholder="Enter email address"
-            sx={{
-              backgroundColor: "white",
-              borderRadius: 1,
-              flex: 1,
-              marginRight: 1,
-            }}
-          />
-          <Button
-            variant="contained"
-            sx={{ backgroundColor: "#ff5722", color: "white" }}
-          >
-            SEND
-          </Button>
-        </Box>
-        <Box sx={{ display: "flex", gap: 1 }}>
-          <Link to="#" style={{ textDecoration: "none", color: "white" }}>
-            <Typography variant="body2" color="light.main">
-              Facebook
+          <Box sx={{ flex: 1, minWidth: 200, maxWidth: 400 }}>
+            <Typography variant="h6" sx={{ mb: 2, color: "white" }}>
+              SUBSCRIBE
             </Typography>
-          </Link>
-          <Link to="#" style={{ textDecoration: "none", color: "white" }}>
-            <Typography variant="body2" color="light.main">
-              Twitter
-            </Typography>
-          </Link>
-          <Link to="#" style={{ textDecoration: "none", color: "white" }}>
-            <Typography variant="body2" color="light.main">
-              LinkedIn
-            </Typography>
-          </Link>
+            <Box sx={{ display: "flex", mb: 2 }}>
+              <TextField
+                variant="outlined"
+                size="small"
+                placeholder="Enter email address"
+                sx={{
+                  backgroundColor: "white",
+                  borderRadius: 1,
+                  flex: 1,
+                  marginRight: 1,
+                }}
+              />
+              <Button
+                variant="contained"
+                sx={{ backgroundColor: "#ff5722", color: "white" }}
+              >
+                SEND
+              </Button>
+            </Box>
+            <Box sx={{ display: "flex", gap: 1 }}>
+              <Link to="#" style={{ textDecoration: "none", color: "white" }}>
+                <Typography variant="body2" color="light.main">
+                  Facebook
+                </Typography>
+              </Link>
+              <Link to="#" style={{ textDecoration: "none", color: "white" }}>
+                <Typography variant="body2" color="light.main">
+                  Twitter
+                </Typography>
+              </Link>
+              <Link to="#" style={{ textDecoration: "none", color: "white" }}>
+                <Typography variant="body2" color="light.main">
+                  LinkedIn
+                </Typography>
+              </Link>
+            </Box>
+          </Box>
         </Box>
       </Box>
       <Box sx={{ width: "100%", mt: 4, textAlign: "center" }}>
         <Typography variant="body2" sx={{ color: "white" }}>
-          © 2024 All rights reserved by Only Two Sdn Bhd.
+          © 2024 All rights reserved by Go Green Sdn Bhd .
         </Typography>
       </Box>
     </Box>

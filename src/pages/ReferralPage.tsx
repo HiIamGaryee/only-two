@@ -15,7 +15,8 @@ import Layout from "../Layout";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { ReactComponent as LeafIcon } from "../assets/icons/leaf.svg"; 
+import { ReactComponent as LeafIcon } from "../assets/icons/leaf.svg";
+import bgiMG from "../assets/home-bg4.png";
 
 const ReferralPage = () => {
   const [email, setEmail] = useState("");
@@ -23,12 +24,12 @@ const ReferralPage = () => {
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
-  
+
   return (
     <Layout>
       <Box
         sx={{
-          backgroundImage: 'url("/path/to/nature-hero-image.jpg")', 
+          backgroundImage: `url(${bgiMG})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           minHeight: "60vh",
@@ -41,18 +42,24 @@ const ReferralPage = () => {
         <Typography
           variant="h3"
           sx={{
-            color: "#ffffff",
+            color: "primary.main",
             fontWeight: "bold",
             textAlign: "center",
             mb: 2,
-            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)", 
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
           }}
         >
           Join the Green Movement 🌱
         </Typography>
         <Typography
           variant="h6"
-          sx={{ color: "#ffffff", textAlign: "center", mb: 4, textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
+          sx={{
+            color: "light.main",
+
+            textAlign: "center",
+            mb: 4,
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+          }}
         >
           Support sustainable products and ideas by referring your friends!
         </Typography>
@@ -72,13 +79,21 @@ const ReferralPage = () => {
       </Box>
 
       {/* Body Section */}
-      <Box sx={{ p: 4, backgroundColor: "#f1f8e9" }}> 
+      <Box sx={{ p: 4, backgroundColor: "#f1f8e9" }}>
         <Box sx={{ textAlign: "center", mb: 6 }}>
-          <Typography variant="h4" sx={{ fontWeight: "bold", color: "#1b5e20", mb: 2 }}>
+          <Typography
+            variant="h4"
+            sx={{ fontWeight: "bold", color: "#1b5e20", mb: 2 }}
+          >
             How It Works
           </Typography>
-          <Typography variant="body1" sx={{ fontSize: "1.2rem", color: "#4e342e" }}>
-            Invite your friends to join the platform. For every referral, you contribute directly to sustainable projects and receive green rewards!
+          <Typography
+            variant="body1"
+            sx={{ fontSize: "1.2rem", color: "#4e342e" }}
+          >
+            Invite your friends to join the platform. For every referral, you
+            contribute directly to sustainable projects and receive green
+            rewards!
           </Typography>
         </Box>
 
@@ -94,17 +109,24 @@ const ReferralPage = () => {
               }}
             >
               <CardContent>
-                <Typography variant="h5" fontWeight="bold" color="primary" gutterBottom>
+                <Typography
+                  variant="h5"
+                  fontWeight="bold"
+                  color="primary"
+                  gutterBottom
+                >
                   Your Referrals
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 2 }}>
-                  Help us grow the green community! Share your referral link with friends, and for each sign-up, earn rewards like eco-friendly products or green credits.
+                  Help us grow the green community! Share your referral link
+                  with friends, and for each sign-up, earn rewards like
+                  eco-friendly products or green credits.
                 </Typography>
                 <Divider sx={{ mb: 2 }} />
                 <TextField
                   variant="outlined"
                   fullWidth
-                  value="https://example.com/referral-link" 
+                  value="https://example.com/referral-link"
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
@@ -143,7 +165,12 @@ const ReferralPage = () => {
               }}
             >
               <CardContent>
-                <Typography variant="h5" fontWeight="bold" color="primary" gutterBottom>
+                <Typography
+                  variant="h5"
+                  fontWeight="bold"
+                  color="primary"
+                  gutterBottom
+                >
                   Invite Friends via Email
                 </Typography>
                 <TextField
@@ -176,19 +203,34 @@ const ReferralPage = () => {
         </Grid>
 
         <Box sx={{ textAlign: "center", mt: 6 }}>
-          <Typography variant="h5" fontWeight="bold" color="primary" sx={{ mb: 2 }}>
+          <Typography
+            variant="h5"
+            fontWeight="bold"
+            color="primary"
+            sx={{ mb: 2 }}
+          >
             Spread the Word on Social Media 🌍
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
             <Button
               variant="contained"
-              sx={{ backgroundColor: "#0077b5", minWidth: 48, minHeight: 48, "&:hover": { backgroundColor: "#005582" } }}
+              sx={{
+                backgroundColor: "#0077b5",
+                minWidth: 48,
+                minHeight: 48,
+                "&:hover": { backgroundColor: "#005582" },
+              }}
             >
               <LinkedInIcon />
             </Button>
             <Button
               variant="contained"
-              sx={{ backgroundColor: "#1DA1F2", minWidth: 48, minHeight: 48, "&:hover": { backgroundColor: "#0d8ddb" } }}
+              sx={{
+                backgroundColor: "#1DA1F2",
+                minWidth: 48,
+                minHeight: 48,
+                "&:hover": { backgroundColor: "#0d8ddb" },
+              }}
             >
               <TwitterIcon />
             </Button>
@@ -196,9 +238,18 @@ const ReferralPage = () => {
         </Box>
       </Box>
 
-      <Box sx={{ backgroundColor: "#388e3c", color: "#fff", p: 4, mt: 4, textAlign: "center" }}>
+      <Box
+        sx={{
+          backgroundColor: "#388e3c",
+          color: "#fff",
+          p: 4,
+          mt: 4,
+          textAlign: "center",
+        }}
+      >
         <Typography variant="body1">
-          By sharing, you’re helping the environment and making a direct impact on sustainability projects worldwide.
+          By sharing, you’re helping the environment and making a direct impact
+          on sustainability projects worldwide.
         </Typography>
       </Box>
     </Layout>

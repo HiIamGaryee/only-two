@@ -1,27 +1,34 @@
 import React from "react";
-import {
-  Box,
-  Grid,
-  Card,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Box, Grid, Card, Typography, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import Layout from "../Layout";
-
+import Image1 from '../eco images/habits.jpg';  
+import Image2 from '../eco images/confuse.jpg'; 
+import Image3 from '../eco images/tap.jpg'; 
+import Image4 from '../eco images/fc.jpg';  
+import Image5 from '../eco images/hqdefault.jpg';  
 const BlogPage = () => {
+  const navigate = useNavigate(); 
+
+  
+  const handleReadMore = () => {
+    navigate(`/post`);  
+  };
+
   return (
     <Layout>
-      <Typography variant="h3" align="center" fontWeight="bold" sx={{ mb: 4, color: "#ffffff" }}>
+      <Typography variant="h3" align="center" fontWeight="bold" sx={{ mb: 4 }}>
         Eco-Friendly Tips & News
       </Typography>
 
       <Box sx={{ maxWidth: "100%", overflowY: "auto", px: 4, mb: 6 }}>
         <Grid container spacing={4}>
 
+
           <Grid item xs={12} md={8}>
             <Card
               sx={{
-                backgroundImage: 'url("http://img.zcool.cn/community/01a349556527710000008ec95520c7.jpg@2o.jpg")', 
+                backgroundImage: `url(${Image1})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 minHeight: "400px",
@@ -49,18 +56,22 @@ const BlogPage = () => {
                 <Typography variant="body1" sx={{ mb: 2, color: "#ffffff" }}>
                   Learn how these simple eco-friendly habits can help you make a positive impact on the planet.
                 </Typography>
-                <Button variant="contained" sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}>
+                <Button 
+                  variant="contained"
+                  sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}
+                  onClick={handleReadMore}  
+                >
                   Read More
                 </Button>
               </Box>
             </Card>
           </Grid>
 
-          
+
           <Grid item xs={12} md={4}>
             <Card
               sx={{
-                backgroundImage: 'url("https://t4.ftcdn.net/jpg/06/04/25/67/360_F_604256779_amJh8y1RKHPwtHGNN5NCQJDiTrrUWGgS.jpg")', 
+                backgroundImage: `url(${Image2})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 minHeight: "200px",
@@ -85,18 +96,22 @@ const BlogPage = () => {
                 <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: "#ffffff" }}>
                   How to Reduce Plastic in Your Daily Life
                 </Typography>
-                <Button variant="contained" sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}>
+                <Button 
+                  variant="contained" 
+                  sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}
+                  onClick={handleReadMore}  
+                >
                   Read More
                 </Button>
               </Box>
             </Card>
           </Grid>
 
-          
+          {/* Third Blog Post */}
           <Grid item xs={12} md={4}>
             <Card
               sx={{
-                backgroundImage: 'url("https://tse2.mm.bing.net/th?id=OIP.zBWANUITH4fqA19m1TeuQAHaE7&pid=Api&P=0&h=180")', 
+                backgroundImage: `url(${Image3})`,
                 backgroundPosition: "center",
                 minHeight: "200px",
                 position: "relative",
@@ -120,17 +135,22 @@ const BlogPage = () => {
                 <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: "#ffffff" }}>
                   10 Ways to Conserve Water at Home
                 </Typography>
-                <Button variant="contained" sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}>
+                <Button 
+                  variant="contained" 
+                  sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}
+                  onClick={handleReadMore}  
+                >
                   Read More
                 </Button>
               </Box>
             </Card>
           </Grid>
 
+          {/* Fourth Blog Post */}
           <Grid item xs={12} md={4}>
             <Card
               sx={{
-                backgroundImage: 'url("https://i.ytimg.com/vi/UUJiDUDOtL8/hqdefault.jpg")', 
+                backgroundImage: `url(${Image4})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 minHeight: "200px",
@@ -155,17 +175,22 @@ const BlogPage = () => {
                 <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: "#ffffff" }}>
                   Renewable Energy: The Future of Green Technology
                 </Typography>
-                <Button variant="contained" sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}>
+                <Button 
+                  variant="contained" 
+                  sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}
+                  onClick={handleReadMore}  
+                >
                   Read More
                 </Button>
               </Box>
             </Card>
           </Grid>
 
+ 
           <Grid item xs={12} md={4}>
             <Card
               sx={{
-                backgroundImage: 'url("https://images.unsplash.com/photo-1601568873917-1d9f126f645f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60")', 
+                backgroundImage: `url(${Image5})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 minHeight: "200px",
@@ -190,7 +215,11 @@ const BlogPage = () => {
                 <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: "#ffffff" }}>
                   Composting 101: Turn Your Waste Into Gold
                 </Typography>
-                <Button variant="contained" sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}>
+                <Button 
+                  variant="contained" 
+                  sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}
+                  onClick={handleReadMore}  
+                >
                   Read More
                 </Button>
               </Box>

@@ -22,8 +22,9 @@ import DirectoryPage from "./pages/DirectoryPage";
 import ReferralPage from "./pages/ReferralPage";
 import FaqPage from "./pages/FaqPage";
 import CollaborationPage from "./pages/CollaborationPage";
+import PostPage from "./pages/PostPage";
 
-// Layout component that specifies the default error element
+
 const Layout = () => {
   return (
     <div>
@@ -35,8 +36,8 @@ const Layout = () => {
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />, // Use the Layout as the top-level route element
-    errorElement: <Error />, // Set a default error element here
+    element: <Layout />, 
+    errorElement: <Error />,
     children: [
       { path: "/", element: <Home /> },
       { path: "/login", element: <Login /> },
@@ -53,9 +54,9 @@ export const router = createBrowserRouter([
       { path: "/terms-and-conditions", element: <TnCPage /> },
       { path: "/collaboration", element: <CollaborationPage /> },
       { path: "/blog", element: <BlogPage /> },
+      { path: "/post", element: <PostPage /> },
       { path: "/wizardz", element: <WizardzPage /> },
       { path: "/rewards", element: <RewardsPage /> },
-      { path: "/recycling-directory", element: <DirectoryPage /> },
       {
         path: "/member/profile",
         element: (

@@ -2,17 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Box, Typography, Grid, TextField, Button, Link, List, ListItem, ListItemText } from "@mui/material";
 import { Facebook, Twitter, LinkedIn, Email, Print } from "@mui/icons-material";
 import Layout from "../Layout";
+import imagePlaceholder from '../eco images/ECO GREEN leaf 1.webp' ;
+import imagePlaceholder1 from '../eco images/Green-Nature-Eco-Friendly-Wallpapers-Large-37.jpg';
 
-// Placeholder image links for the design
-const imagePlaceholder = "http://photoeverywhere.co.uk/britain/dorset/trees_leaves.JPG";
 
-const imagePlaceholder1 = "https://i2.wp.com/www.stunningmesh.com/wp-content/uploads/2012/07/Green-Nature-Eco-Friendly-Wallpapers-Large-44.jpg";
 
 
 const AboutUsPage = () => {
   const [isContactVisible, setIsContactVisible] = useState(false);
 
-  // Handle scroll event to reveal contact form
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -30,7 +28,6 @@ const AboutUsPage = () => {
   return (
     <Layout>
       <Grid container spacing={4}>
-        {/* Left Sidebar */}
         <Grid item xs={12} md={3}>
           <Box
             sx={{
@@ -85,7 +82,7 @@ const AboutUsPage = () => {
 
         <Grid item xs={12} md={9}>
           <Box sx={{ p: 4 }}>
-            {/* Our Story Section */}
+            
             <Grid container spacing={4} alignItems="center">
               <Grid item xs={12} md={6}>
                 <Typography variant="h6" color="text.secondary" gutterBottom>

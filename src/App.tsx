@@ -7,7 +7,6 @@ import { MovieProvider } from "./context/movie-context";
 import "./App.css";
 import { AuthProvider } from "./AuthProvider";
 import useMode from "./hooks/useMode";
-
 const queryClient = new QueryClient();
 
 function App() {

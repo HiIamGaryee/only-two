@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3000",
   "dependencies": {
+    "@chatscope/chat-ui-kit-react": "^2.0.3",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^3.9.0",

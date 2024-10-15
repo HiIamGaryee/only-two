@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button, Menu, MenuItem } from "@mui/material";
+import { Button, IconButton, Menu, MenuItem } from "@mui/material";
 import { useTranslation } from "react-i18next";
-
+import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
@@ -23,9 +23,9 @@ const LanguageSwitcher = () => {
 
   return (
     <>
-      <Button variant="outlined" sx={{ mt: 2 }} onClick={handleClick}>
-        Change Language
-      </Button>
+      <IconButton onClick={handleClick}>
+        <LanguageRoundedIcon />
+      </IconButton>
       <Menu
         id="language-menu"
         anchorEl={anchorEl}

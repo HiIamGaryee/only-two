@@ -1,5 +1,67 @@
 {
-    "welcome_desc": "Welcome to React",
-    "sign_in_desc": "Sign In Now",
-    "profile": "Profile"
-  }
+  "welcome_desc": "Welcome to React",
+  "sign_in_desc": "Sign In Now",
+  "profile": "Profile",
+  "service_we_provide": "Service We Provide",
+  "recycling_directory": "Recycling Directory",
+  "search_recycle_area": "Search recycling centers or areas",
+  "plastic_recycling": "Plastic Recycling",
+  "plastic_recycling_desc": "Turn your plastic waste into valuable resources.",
+  "organic_composting": "Organic Composting",
+  "organic_composting_desc": "Create compost for agricultural use from organic waste.",
+  "electronic_disposal": "Electronic Disposal",
+  "electronic_disposal_desc": "Safely dispose of electronic waste.",
+  "metal_recycling": "Metal Recycling",
+  "metal_recycling_desc": "Recycle metals to reduce the environmental impact of mining.",
+  "paper_recycling": "Paper Recycling",
+  "paper_recycling_desc": "Help reduce deforestation by recycling paper products.",
+  "glass_recycling": "Glass Recycling",
+  "glass_recycling_desc": "Recycle glass to save energy and raw materials.",
+  "clothing_recycling": "Clothing Recycling",
+  "clothing_recycling_desc": "Give old clothes a new life and help those in need.",
+  "furniture_recycling": "Furniture Recycling",
+  "furniture_recycling_desc": "Donate old furniture to extend its life.",
+  "battery_recycling": "Battery Recycling",
+  "battery_recycling_desc": "Proper disposal of batteries to prevent environmental contamination.",
+  "automotive_recycling": "Automotive Recycling",
+  "automotive_recycling_desc": "Responsible recycling of automotive parts and fluids.",
+  "chemical_disposal": "Chemical Disposal",
+  "chemical_disposal_desc": "Safe disposal of hazardous household chemicals.",
+  "construction_waste_recycling": "Construction Waste Recycling",
+  "construction_waste_recycling_desc": "Reprocess construction waste for new building materials.",
+  "food_waste_recycling": "Food Waste Recycling",
+  "food_waste_recycling_desc": "Turn your food scraps into compost for community gardens.",
+  "tyre_recycling": "Tyre Recycling",
+  "tyre_recycling_desc": "Recycle used tyres to create rubber mulch for playgrounds.",
+  "biodegradable_materials_processing": "Biodegradable Materials Processing",
+  "biodegradable_materials_processing_desc": "Process biodegradable materials to minimize landfill use.",
+  "faq": "FAQ - Eco System",
+  "faq_two": "What is return policy?",
+  "faq_two_desc": "Our return policy allows returns within 30 days of purchase. Please ensure the product is in its original condition.",
+  "track_order": "How can I track my order?",
+  "track_order_desc": "You can track your order using the tracking number provided in your order confirmation email.",
+  "international_shipping": "Do we offer international shipping?",
+  "international_shipping_desc": "Yes, we offer international shipping to many countries. Please see our shipping policy for more details.",
+  "make_payment": "How do I make a payment?",
+  "make_payment_desc": "We accept various payment methods including credit/debit cards, PayPal, and bank transfers.",
+  "change_cancel_order": "Can I change or cancel my order?",
+  "change_cancel_order_desc": "You can change or cancel your order within 24 hours of placing it. After that, the order processing begins, and changes may not be possible.",
+  "warranty_policy": "What is your warranty policy?",
+  "warranty_policy_desc": "We offer a one-year warranty on all our products. The warranty covers manufacturing defects and excludes any damage caused by misuse.",
+  "contact_customer_service": "How can I contact customer service?",
+  "contact_customer_service_desc": "You can reach our customer service team via email at support@example.com or by calling (+081) 5678 1234.",
+  "available_discounts": "Are there any discounts available?",
+  "available_discounts_desc": "Yes, we offer seasonal discounts and promotions. Subscribe to our newsletter to stay updated on the latest offers.",
+  "subscribe_newsletter": "How do I subscribe to your newsletter?",
+  "subscribe_newsletter_desc": "You can subscribe to our newsletter by entering your email address in the subscription box at the bottom of our website.",
+  "privacy_policy": "What is your privacy policy?",
+  "privacy_policy_desc": "Our privacy policy outlines how we collect, use, and protect your personal information. Please read it carefully to understand our practices."
+}
+  
+
+
+
+
+
+
+

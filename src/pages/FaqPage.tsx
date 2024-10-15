@@ -8,51 +8,53 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Layout from "../Layout";
+import { useTranslation } from "react-i18next";
 
 const faqList = [
   {
-    code: "What is return policy?",
-    desc: "Our return policy allows returns within 30 days of purchase. Please ensure the product is in its original condition.",
+    code: "faq_two",
+    desc: "faq_two_desc",
   },
   {
-    code: "How can I track my order?",
-    desc: "You can track your order using the tracking number provided in your order confirmation email.",
+    code: "track_order",
+    desc: "track_order_desc",
   },
   {
-    code: "Do we offer international shipping?",
-    desc: "Yes, we offer international shipping to many countries. Please see our shipping policy for more details.",
+    code: "international_shipping",
+    desc: "international_shipping_desc",
   },
   {
-    code: "How do I make a payment?",
-    desc: "We accept various payment methods including credit/debit cards, PayPal, and bank transfers.",
+    code: "make_payment",
+    desc: "make_payment_desc",
   },
   {
-    code: "Can I change or cancel my order?",
-    desc: "You can change or cancel your order within 24 hours of placing it. After that, the order processing begins, and changes may not be possible.",
+    code: "change_cancel_order",
+    desc: "change_cancel_order_desc",
   },
   {
-    code: "What is your warranty policy?",
-    desc: "We offer a one-year warranty on all our products. The warranty covers manufacturing defects and excludes any damage caused by misuse.",
+    code: "warranty_policy",
+    desc: "warranty_policy_desc",
   },
   {
-    code: "How can I contact customer service?",
-    desc: "You can reach our customer service team via email at support@example.com or by calling (+081) 5678 1234.",
+    code: "contact_customer_service",
+    desc: "contact_customer_service_desc",
   },
   {
-    code: "Are there any discounts available?",
-    desc: "Yes, we offer seasonal discounts and promotions. Subscribe to our newsletter to stay updated on the latest offers.",
+    code: "available_discounts",
+    desc: "available_discounts_desc",
   },
   {
-    code: "How do I subscribe to your newsletter?",
-    desc: "You can subscribe to our newsletter by entering your email address in the subscription box at the bottom of our website.",
+    code: "subscribe_newsletter",
+    desc: "subscribe_newsletter_desc",
   },
   {
-    code: "What is your privacy policy?",
-    desc: "Our privacy policy outlines how we collect, use, and protect your personal information. Please read it carefully to understand our practices.",
+    code: "privacy_policy",
+    desc: "privacy_policy_desc",
   },
 ];
 
 const FaqPage = () => {
+  const { t } = useTranslation();
   const [expanded, setExpanded] = useState<string | false>(false);
 
   const handleChange =
@@ -71,9 +73,8 @@ const FaqPage = () => {
       >
         <Box sx={{ maxWidth: 800, margin: "auto", textAlign: "center" }}>
           <Typography variant="h4" gutterBottom fontWeight="bold">
-            FAQ
+            {t("faq")}
           </Typography>
-
           {faqList.map((faq, index) => (
             <Accordion
               key={index}
@@ -91,12 +92,12 @@ const FaqPage = () => {
                 id={`panel${index}bh-header`}
               >
                 <Typography variant="h6" sx={{ flexShrink: 0 }}>
-                  {faq.code}
+                  {t(faq.code)}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography variant="body2" textAlign="left">
-                  {faq.desc}
+                  {t(faq.desc)}
                 </Typography>
               </AccordionDetails>
             </Accordion>

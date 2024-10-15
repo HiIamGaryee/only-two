@@ -28,11 +28,11 @@ const Navbar = () => {
       icon: <CottageRoundedIcon />,
       link: "/",
     },
-    {
-      name: "Movies",
-      icon: <LocalMoviesRoundedIcon />,
-      link: "/movies",
-    },
+    // {
+    //   name: "Movies",
+    //   icon: <LocalMoviesRoundedIcon />,
+    //   link: "/movies",
+    // },
     {
       name: "Profile",
       icon: <AccountCircleRoundedIcon />,

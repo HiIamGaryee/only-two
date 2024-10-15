@@ -18,76 +18,91 @@ import { LatLngExpression } from "leaflet";
 
 const recyclingSectors = [
   {
+    icon: "🍾",
     title: "plastic_recycling",
     description: "plastic_recycling_desc",
     position: L.latLng(51.5074, -0.1278), // Central London
   },
   {
+    icon: "🌱",
     title: "organic_composting",
     description: "organic_composting_desc",
     position: L.latLng(51.5126, -0.1116), // Hyde Park
   },
   {
+    icon: "📱",
     title: "electronic_disposal",
     description: "electronic_disposal_desc",
     position: L.latLng(51.5205, -0.093), // Shoreditch
   },
   {
+    icon: "⚙️",
     title: "metal_recycling",
     description: "metal_recycling_desc",
     position: L.latLng(51.5285, -0.0847), // Camden
   },
   {
+    icon: "⚙️",
     title: "paper_recycling",
     description: "paper_recycling_desc",
     position: L.latLng(51.5028, -0.0877), // The Shard
   },
   {
+    icon: "🍷",
     title: "glass_recycling",
     description: "glass_recycling_desc",
     position: L.latLng(51.5099, -0.1342), // Oxford Street
   },
   {
+    icon: "🧢",
     title: "clothing_recycling",
     description: "clothing_recycling_desc",
     position: L.latLng(51.5299, -0.0707), // Hackney
   },
   {
+    icon: "🛋️",
     title: "furniture_recycling",
     description: "furniture_recycling_desc",
     position: L.latLng(51.5407, -0.1436), // Hampstead
   },
   {
+    icon: "🔋",
     title: "battery_recycling",
     description: "battery_recycling_desc",
     position: L.latLng(51.5161, -0.1048), // Holborn
   },
   {
+    icon: "🚗",
     title: "automotive_recycling",
     description: "automotive_recycling_desc",
     position: L.latLng(51.4851, -0.1749), // Kensington
   },
   {
+    icon: "☣️",
     title: "chemical_disposal",
     description: "chemical_disposal_desc",
     position: L.latLng(51.4941, -0.1749), // Chelsea
   },
   {
+    icon: "🚧",
     title: "construction_waste_recycling",
     description: "construction_waste_recycling_desc",
     position: L.latLng(51.513, -0.0983), // The City
   },
   {
+    icon: "🌽",
     title: "food_waste_recycling",
     description: "food_waste_recycling_desc",
     position: L.latLng(51.508, -0.1281), // Victoria
   },
   {
+    icon: "🏎️",
     title: "tyre_recycling",
     description: "tyre_recycling_desc",
     position: L.latLng(51.5096, -0.1967), // Notting Hill
   },
   {
+    icon: "🌾",
     title: "biodegradable_materials_processing",
     description: "biodegradable_materials_processing_desc",
     position: L.latLng(51.5004, -0.1784), // Buckingham Palace area
@@ -174,6 +189,9 @@ const DirectoryPage = () => {
                   }}
                 >
                   <CardContent>
+                    <Typography variant="h4" component="div" textAlign="center">
+                      {sector.icon}
+                    </Typography>
                     <Typography variant="h5" component="div">
                       {t(sector.title)}
                     </Typography>

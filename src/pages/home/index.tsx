@@ -1,5 +1,4 @@
 import { Box, Typography, Button, Stack, Grid, Avatar } from "@mui/material";
-import coffeeImg from "../../assets/go-green/logo.png";
 
 import { useNavigate } from "react-router-dom";
 import homeBg from "../../assets/home-bg.png";
@@ -36,7 +35,7 @@ const HomePage = () => {
         sx={{
           backgroundImage: `url(${homeBg})`,
           backgroundSize: "100% 100%",
-          minHeight: "300px",
+          minHeight: "500px",
           objectFit: "cover",
           // backgroundRepeat: "no-repeat",
         }}
@@ -78,7 +77,8 @@ const HomePage = () => {
                   </Box>
                 </Box>
                 <Typography
-                  variant="h6"
+                  variant="h5"
+                  color="light.main"
                   px={2}
                   sx={{
                     textAlign: { xs: "center", md: "start" },
@@ -97,7 +97,9 @@ const HomePage = () => {
                     justifyContent: { xs: "center", md: "start" },
                   }}
                 >
-                  <Button>About Us</Button>
+                  <Button variant="text" onClick={() => navigate(`/about-us`)}>
+                    About Us
+                  </Button>
                 </Box>
               </Stack>
             </Box>
@@ -116,23 +118,11 @@ const HomePage = () => {
           }}
         >
           <Box
-            component="img"
-            src={coffeeImg}
-            alt="Bouncing GIF"
             sx={{
               cursor: "pointer",
               mt: { xs: 8, md: 0 },
               maxHeight: "500px",
               display: "none",
-              // animation: "bounce 2s infinite",
-              // "@keyframes bounce": {
-              //   "0%, 100%": {
-              //     transform: "translateY(0)",
-              //   },
-              //   "50%": {
-              //     transform: "translateY(-20px)",
-              //   },
-              // },
             }}
           />
         </Grid>

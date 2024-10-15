@@ -1,12 +1,13 @@
 import React from "react";
 import { Box, Grid, Card, Typography, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import Layout from "../Layout";
 import Image1 from '../eco images/habits.jpg';  
 import Image2 from '../eco images/confuse.jpg'; 
 import Image3 from '../eco images/tap.jpg'; 
 import Image4 from '../eco images/fc.jpg';  
 import Image5 from '../eco images/hqdefault.jpg';  
+import { useNavigate } from "react-router-dom";
+
 const BlogPage = () => {
   const navigate = useNavigate(); 
 
@@ -43,18 +44,24 @@ const BlogPage = () => {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  backgroundColor: "rgba(0, 0, 0, 0.5)", 
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
                   padding: 4,
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "flex-end",
                 }}
               >
-                <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ color: "#ffffff" }}>
+                <Typography
+                  variant="h4"
+                  fontWeight="bold"
+                  gutterBottom
+                  sx={{ color: "#ffffff" }}
+                >
                   Featured: The Top Eco-Friendly Habits to Start Today
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 2, color: "#ffffff" }}>
-                  Learn how these simple eco-friendly habits can help you make a positive impact on the planet.
+                  Learn how these simple eco-friendly habits can help you make a
+                  positive impact on the planet.
                 </Typography>
                 <Button 
                   variant="contained"
@@ -86,14 +93,19 @@ const BlogPage = () => {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  backgroundColor: "rgba(0, 0, 0, 0.5)", 
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
                   padding: 4,
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "flex-end",
                 }}
               >
-                <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: "#ffffff" }}>
+                <Typography
+                  variant="h6"
+                  fontWeight="bold"
+                  gutterBottom
+                  sx={{ color: "#ffffff" }}
+                >
                   How to Reduce Plastic in Your Daily Life
                 </Typography>
                 <Button 
@@ -125,14 +137,19 @@ const BlogPage = () => {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  backgroundColor: "rgba(0, 0, 0, 0.5)", 
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
                   padding: 4,
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "flex-end",
                 }}
               >
-                <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: "#ffffff" }}>
+                <Typography
+                  variant="h6"
+                  fontWeight="bold"
+                  gutterBottom
+                  sx={{ color: "#ffffff" }}
+                >
                   10 Ways to Conserve Water at Home
                 </Typography>
                 <Button 
@@ -165,14 +182,19 @@ const BlogPage = () => {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  backgroundColor: "rgba(0, 0, 0, 0.5)", 
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
                   padding: 4,
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "flex-end",
                 }}
               >
-                <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: "#ffffff" }}>
+                <Typography
+                  variant="h6"
+                  fontWeight="bold"
+                  gutterBottom
+                  sx={{ color: "#ffffff" }}
+                >
                   Renewable Energy: The Future of Green Technology
                 </Typography>
                 <Button 
@@ -205,14 +227,19 @@ const BlogPage = () => {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  backgroundColor: "rgba(0, 0, 0, 0.5)", 
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
                   padding: 4,
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "flex-end",
                 }}
               >
-                <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: "#ffffff" }}>
+                <Typography
+                  variant="h6"
+                  fontWeight="bold"
+                  gutterBottom
+                  sx={{ color: "#ffffff" }}
+                >
                   Composting 101: Turn Your Waste Into Gold
                 </Typography>
                 <Button 
@@ -225,7 +252,6 @@ const BlogPage = () => {
               </Box>
             </Card>
           </Grid>
-
         </Grid>
       </Box>
     </Layout>

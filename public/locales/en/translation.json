@@ -55,13 +55,21 @@
   "subscribe_newsletter": "How do I subscribe to your newsletter?",
   "subscribe_newsletter_desc": "You can subscribe to our newsletter by entering your email address in the subscription box at the bottom of our website.",
   "privacy_policy": "What is your privacy policy?",
-  "privacy_policy_desc": "Our privacy policy outlines how we collect, use, and protect your personal information. Please read it carefully to understand our practices."
+  "privacy_policy_desc": "Our privacy policy outlines how we collect, use, and protect your personal information. Please read it carefully to understand our practices.",
+  "add_promo_code": "Add Promo Code",
+  "promo_code": "Promo Code",
+  "payment_method": "Payment method",
+  "cardholder_name": "Cardholder Name",
+  "card_number": "Card Number",
+  "expiry_date": "Expiry Date",
+  "ccv": "CCV",
+  "save_payment_details": "Save my payment details for future purchases",
+  "enable_recurring_payments": "Enable recurring payments",
+  "when_my_balance_is_below": "When my balance is below",
+  "order_summary": "Order Summary",
+  "balance_amount": "Balance amount",
+  "promo": "Promo",
+  "total": "Total",
+  "account_top_up_to": "Account top up to",
+  "confirm_order": "Confirm your order"
 }
-  
-
-
-
-
-
-
-

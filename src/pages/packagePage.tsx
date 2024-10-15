@@ -11,59 +11,60 @@ import {
   ToggleButton,
 } from "@mui/material";
 import Layout from "../Layout";
+import { useNavigate } from "react-router-dom";
 
 const packageList = [
   {
-    id: "basic",
-    name: "Basic",
-    monthlyPrice: "$8 / Per Month",
-    annuallyPrice: "$80 / Per Year",
-    description: "Best for blogs and personal websites",
+    id: "member",
+    name: "Member",
+    monthlyPrice: "$10 / Per Month",
+    annuallyPrice: "$100 / Per Year",
+    description:
+      "Ideal for individuals seeking to engage with eco-friendly practices and earn rewards.",
     features: [
-      "Cookie policy & banner",
-      "Cookie script auto blocker",
-      "10 pages per scan",
-      "10,000 pageviews/month",
-      "Basic customization",
+      "Access to exclusive educational content on sustainability",
+      "Participation in eco-friendly challenges and competitions",
+      "Earn points for each eco-friendly activity, redeemable for gifts or discounts",
+      "First access to new eco workshops and webinars",
     ],
-    customers: "Chosen by 152k customers",
+    customers: "Preferred by eco-conscious individuals worldwide",
   },
   {
-    id: "premium",
-    name: "Premium",
-    monthlyPrice: "$39 / Per Month",
-    annuallyPrice: "$390 / Per Year",
-    description: "Best for small businesses and startups",
+    id: "premium_member",
+    name: "Premium Member",
+    monthlyPrice: "$12 / Per Month",
+    annuallyPrice: "$120 / Per Year",
+    description:
+      "Enhanced membership for those committed to making a significant impact.",
     features: [
-      "Cookie policy & banner",
-      "Cookie script auto blocker",
-      "Privacy regulation monitoring",
-      "1000 pages per scan",
-      "100,000 pageviews/month",
-      "Geo-targeted cookie banner",
-      "Remove Coonsept™ logo",
+      "All benefits of a regular member",
+      "Double points on all eco-friendly activities",
+      "Exclusive access to an AI bot that provides instant answers to eco-related queries",
+      "Priority booking for exclusive events and workshops",
     ],
-    customers: "Chosen by 82k customers",
+    customers: "Chosen by dedicated eco-warriors looking for maximum impact",
   },
   {
-    id: "enterprise",
-    name: "Enterprise",
+    id: "partner",
+    name: "Partner",
     monthlyPrice: "Custom",
     annuallyPrice: "Custom",
-    description: "Best for high traffic websites and resellers",
+    description:
+      "Suitable for businesses and organizations committed to eco-friendly products and services.",
     features: [
-      "Everything in Premium Plan",
-      "Compliance consulting",
-      "Training & onboarding",
-      "Unlimited pages per scan",
-      "Advanced customization",
+      "Opportunity to advertise your eco-friendly products on our platform",
+      "Feature your initiatives in our monthly eco-focused newsletter",
+      "Customized insights and analytics on your ad performance",
+      "Direct involvement in major eco-projects and campaigns",
+      "Strategic branding opportunities across various platform channels",
     ],
-    customers: "Chosen by 16k enterprises",
+    customers: "Ideal for eco-conscious brands seeking a targeted audience",
   },
 ];
 
 const PackagePage = () => {
   const [pricingPeriod, setPricingPeriod] = useState("monthly");
+  const navigate = useNavigate();
 
   const handleToggle = (
     event: React.MouseEvent<HTMLElement>,
@@ -90,7 +91,7 @@ const PackagePage = () => {
           fontWeight="bold"
           sx={{ mb: 2 }}
         >
-          Join over 1 Million user using Only Two
+          Join over 1 Million user using Go Green
         </Typography>
         <Typography variant="body1" align="center" sx={{ mb: 4 }}>
           <span>14-day free trial</span> • <span>Cancel anytime</span> •{" "}
@@ -138,13 +139,12 @@ const PackagePage = () => {
                   </Typography>
                   <Divider sx={{ mb: 2 }} />
                   <ul style={{ paddingLeft: "20px", margin: 0 }}>
-                    {pkg.features.map((feature, index) => (
+                    {pkg.features.map((feature: any, index: number) => (
                       <li
                         key={index}
                         style={{
                           marginBottom: "8px",
                           fontSize: "0.875rem",
-
                           textAlign: "left",
                         }}
                       >
@@ -156,9 +156,10 @@ const PackagePage = () => {
                     variant="contained"
                     sx={{ mt: 2 }}
                     fullWidth
-                    disabled={pkg.id === "enterprise"} // Example: Enterprise plan needs contact
+                    onClick={() => navigate(`/payment`)}
+                    disabled={pkg.id === "partner"}
                   >
-                    {pkg.id === "enterprise"
+                    {pkg.id === "partner"
                       ? "Contact sales"
                       : "Start 14-day free trial"}
                   </Button>

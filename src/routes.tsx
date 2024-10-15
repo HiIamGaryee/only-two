@@ -23,6 +23,7 @@ import ReferralPage from "./pages/ReferralPage";
 import FaqPage from "./pages/FaqPage";
 import CollaborationPage from "./pages/CollaborationPage";
 import PostPage from "./pages/PostPage";
+import PaymentPage from "./pages/PaymentPage";
 
 
 const Layout = () => {
@@ -49,6 +50,7 @@ export const router = createBrowserRouter([
       { path: "/faq", element: <FaqPage /> },
       { path: "/referral", element: <ReferralPage /> },
       { path: "/package", element: <PackagePage /> },
+      { path: "/payment", element: <PaymentPage /> },
       { path: "/services", element: <ServicesPage /> },
       { path: "/upcoming-movies", element: <UpcomingPage /> },
       { path: "/terms-and-conditions", element: <TnCPage /> },

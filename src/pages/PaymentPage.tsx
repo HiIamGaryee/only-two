@@ -17,12 +17,14 @@ import {
   IconButton,
 } from "@mui/material";
 import Layout from "../Layout";
+import { useTranslation } from "react-i18next"; // Import the useTranslation hook
 
-import VisaLogo from "../assets/go-green/usq-1.jpeg";
-import PaypalLogo from "../assets/go-green/usq-1.jpeg";
-import AmexLogo from "../assets/go-green/usq-1.jpeg";
+import VisaLogo from "../assets/go-green/visa.png";
+import PaypalLogo from "../assets/go-green/master.png";
+import AmexLogo from "../assets/go-green/amex.png";
 
 const PaymentPage = () => {
+  const { t } = useTranslation(); // Use the useTranslation hook to initialize translation function
   const [vatNumber, setVatNumber] = useState("");
   const [saveDetails, setSaveDetails] = useState(false);
   const [recurring, setRecurring] = useState(false);
@@ -38,22 +40,21 @@ const PaymentPage = () => {
         }}
       >
         <Grid container spacing={4} justifyContent="center">
-          {/* Payment Details Section */}
           <Grid item xs={12} md={8}>
             <Card variant="outlined" sx={{ p: 4 }}>
               <Typography variant="h6" gutterBottom>
-                Add Promo Code
+                {t("add_promo_code")}
               </Typography>
               <TextField
                 fullWidth
-                label="Promo Code"
+                label={t("promo_code")}
                 variant="outlined"
                 value={vatNumber}
                 onChange={(e) => setVatNumber(e.target.value)}
                 sx={{ mb: 2 }}
               />
               <Typography variant="subtitle1" sx={{ mb: 2 }}>
-                Payment method
+                {t("payment_method")}
               </Typography>
               <Box sx={{ display: "flex", mb: 2 }}>
                 <IconButton>
@@ -72,22 +73,26 @@ const PaymentPage = () => {
               </Box>
               <TextField
                 fullWidth
-                label="Cardholder Name"
+                label={t("cardholder_name")}
                 variant="outlined"
                 sx={{ mb: 2 }}
               />
               <TextField
                 fullWidth
-                label="Card Number"
+                label={t("card_number")}
                 variant="outlined"
                 sx={{ mb: 2 }}
               />
               <Grid container spacing={2}>
                 <Grid item xs={6}>
-                  <TextField fullWidth label="Expiry Date" variant="outlined" />
+                  <TextField
+                    fullWidth
+                    label={t("expiry_date")}
+                    variant="outlined"
+                  />
                 </Grid>
                 <Grid item xs={6}>
-                  <TextField fullWidth label="CCV" variant="outlined" />
+                  <TextField fullWidth label={t("ccv")} variant="outlined" />
                 </Grid>
               </Grid>
               <Box gap={1} sx={{ display: "flex", flexDirection: "column" }}>
@@ -98,7 +103,7 @@ const PaymentPage = () => {
                       onChange={() => setSaveDetails(!saveDetails)}
                     />
                   }
-                  label="Save my payment details for future purchases"
+                  label={t("save_payment_details")}
                   sx={{ mt: 2 }}
                 />
                 <FormControlLabel
@@ -108,16 +113,16 @@ const PaymentPage = () => {
                       onChange={() => setRecurring(!recurring)}
                     />
                   }
-                  label="Enable recurring payments"
+                  label={t("enable_recurring_payments")}
                   sx={{ mt: 1 }}
                 />
                 {recurring && (
                   <Box sx={{ mt: 2 }}>
                     <FormControl fullWidth>
-                      <InputLabel>When my balance is below</InputLabel>
+                      <InputLabel>{t("when_my_balance_is_below")} </InputLabel>
                       <Select
                         value={rechargeAmount}
-                        label="When my balance is below"
+                        label={t("when_my_balance_is_below")}
                         onChange={(e) =>
                           setRechargeAmount(Number(e.target.value))
                         }
@@ -131,25 +136,26 @@ const PaymentPage = () => {
               </Box>
             </Card>
           </Grid>
-          {/* Order Summary Section */}
           <Grid item xs={12} md={4}>
             <Card
               raised
               sx={{
                 padding: 4,
                 margin: "auto",
-                backgroundColor: "#fff",
+                bgcolor: "light.light",
               }}
             >
               <Typography variant="h6" gutterBottom>
-                Order Summary
+                {t("order_summary")}
               </Typography>
               <Divider sx={{ my: 2 }} />
 
               {/* Each item in the order summary is a row with justified content */}
               <Grid container spacing={2} mb={4}>
                 <Grid item xs={6}>
-                  <Typography variant="body1">Balance amount:</Typography>
+                  <Typography variant="body1">
+                    {t("balance_amount")}:
+                  </Typography>
                 </Grid>
                 <Grid item xs={6} sx={{ textAlign: "right" }}>
                   <Typography variant="body1">
@@ -158,7 +164,7 @@ const PaymentPage = () => {
                 </Grid>
 
                 <Grid item xs={6}>
-                  <Typography variant="body1">Promo (21%):</Typography>
+                  <Typography variant="body1">{t("promo")} (21%):</Typography>
                 </Grid>
                 <Grid item xs={6} sx={{ textAlign: "right" }}>
                   <Typography variant="body1">
@@ -167,7 +173,7 @@ const PaymentPage = () => {
                 </Grid>
 
                 <Grid item xs={6}>
-                  <Typography variant="body1">Total:</Typography>
+                  <Typography variant="body1">{t("total")}:</Typography>
                 </Grid>
                 <Grid item xs={6} sx={{ textAlign: "right" }}>
                   <Typography variant="body1" sx={{ fontWeight: "bold" }}>
@@ -186,7 +192,7 @@ const PaymentPage = () => {
                     color: "text.secondary",
                   }}
                 >
-                  Account top up to
+                  {t("account_top_up_to")}
                 </Typography>
                 <Typography variant="h6" sx={{ textAlign: "center" }}>
                   Go Green Sdn Bhd
@@ -201,7 +207,7 @@ const PaymentPage = () => {
                 sx={{ mt: 2, width: "100%" }}
                 onClick={() => alert("Order Confirmed!")}
               >
-                Confirm your order
+                {t("confirm_order")}
               </Button>
             </Card>
           </Grid>

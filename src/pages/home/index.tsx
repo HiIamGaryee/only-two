@@ -97,7 +97,10 @@ const HomePage = () => {
                     justifyContent: { xs: "center", md: "start" },
                   }}
                 >
-                  <Button variant="text" onClick={() => navigate(`/about-us`)}>
+                  <Button
+                    variant="contained"
+                    onClick={() => navigate(`/about-us`)}
+                  >
                     About Us
                   </Button>
                 </Box>

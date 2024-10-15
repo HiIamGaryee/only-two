@@ -55,5 +55,21 @@
   "subscribe_newsletter": "如何订阅您的新闻通讯？",
   "subscribe_newsletter_desc": "您可以在我们网站底部的订阅框中输入您的电子邮件地址来订阅我们的新闻通讯。",
   "privacy_policy": "什么是您的隐私政策？",
-  "privacy_policy_desc": "我们的隐私政策概述了我们如何收集、使用和保护您的个人信息。请仔细阅读以了解我们的做法。"
+  "privacy_policy_desc": "我们的隐私政策概述了我们如何收集、使用和保护您的个人信息。请仔细阅读以了解我们的做法。",
+  "add_promo_code": "添加促销代码",
+  "promo_code": "促销代码",
+  "payment_method": "支付方式",
+  "cardholder_name": "持卡人姓名",
+  "card_number": "卡号",
+  "expiry_date": "到期日期",
+  "ccv": "CCV",
+  "save_payment_details": "保存我的支付信息以供将来购买",
+  "enable_recurring_payments": "启用定期付款",
+  "when_my_balance_is_below": "当我的余额低于",
+  "order_summary": "订单摘要",
+  "balance_amount": "余额金额",
+  "promo": "促销",
+  "total": "总计",
+  "account_top_up_to": "账户充值至",
+  "confirm_order": "确认订单"
 }

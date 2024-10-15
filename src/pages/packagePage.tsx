@@ -128,6 +128,10 @@ const PackagePage = () => {
                 }}
               >
                 <CardContent>
+                  <Typography variant="h5" color="primary.main" mb={1}>
+                    {pkg.name}
+                  </Typography>
+
                   <Typography variant="body2">{pkg.customers}</Typography>
                   <Typography variant="h4" fontWeight="bold" sx={{ mb: 1 }}>
                     {pricingPeriod === "monthly"

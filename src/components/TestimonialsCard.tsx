@@ -29,7 +29,7 @@ const testimonials = [
     quote:
       "I absolutely love the items I can redeem with my points. Always something exciting to look forward to!",
     author: "Serhiy Hipskyy",
-    role: "Eco Enthusiast",
+    role: "Premium Member",
     avatar: avatar,
   },
   {
@@ -84,10 +84,14 @@ const TestimonialsCard = () => {
                     sx={{ width: 56, height: 56, mr: 2 }}
                   />
                   <Box>
-                    <Typography variant="subtitle1" fontWeight="bold">
+                    <Typography fontWeight="bold" textAlign="start">
                       {testimonial.author}
                     </Typography>
-                    <Typography variant="caption" color="text.secondary">
+                    <Typography
+                      variant="caption"
+                      textAlign="start"
+                      color="text.secondary"
+                    >
                       {testimonial.role}
                     </Typography>
                   </Box>

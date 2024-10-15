@@ -63,7 +63,8 @@ const Navbar = () => {
           <img
             src="/logo.png"
             alt="Logo"
-            style={{ maxHeight: 50, marginRight: 16 }}
+            style={{ maxHeight: 50, marginRight: 16, cursor: "pointer" }}
+            onClick={() => navigate(`/`)}
           />
         </Box>
         <Box sx={{ display: "flex", gap: 2 }}>

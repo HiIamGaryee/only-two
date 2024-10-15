@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Box, Typography, TextField, Button } from "@mui/material";
 
 const footerLinks = [
@@ -23,6 +23,8 @@ const footerLinks = [
 ];
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <Box
       component="footer"
@@ -47,7 +49,8 @@ const Footer = () => {
           <img
             src="/logo.png"
             alt="Logo"
-            style={{ maxHeight: 50, marginRight: 16 }}
+            style={{ maxHeight: 50, marginRight: 16, cursor: "pointer" }}
+            onClick={() => navigate(`/`)}
           />
           <Box
             sx={{

@@ -6,6 +6,7 @@ import { SignUpParams, postSignUp } from "../../api"; // Adjust the path as nece
 import loginBg from "../../assets/login-bg.jpg";
 import { useAppMutation } from "../../hooks/useAppMutation";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const { t } = useTranslation();
@@ -20,6 +21,7 @@ const SignUp = () => {
     mobile_no: Yup.string().required("Mobile number is required"),
     mobile_prefix_no: Yup.string().required("Mobile prefix is required"),
   });
+  const navigate = useNavigate();
 
   const {
     register,
@@ -57,7 +59,8 @@ const SignUp = () => {
           <img
             src="/logo.png"
             alt="Logo"
-            style={{ maxHeight: 80, marginRight: 16 }}
+            style={{ maxHeight: 80, marginRight: 16, cursor: "pointer" }}
+            onClick={() => navigate(`/`)}
           />
           <Box>
             <Typography variant="h5">Sign Up</Typography>

@@ -76,7 +76,8 @@ const Login = () => {
           <img
             src="/logo.png"
             alt="Logo"
-            style={{ maxHeight: 80, marginRight: 16 }}
+            style={{ maxHeight: 80, marginRight: 16, cursor: "pointer" }}
+            onClick={() => navigate(`/`)}
           />
           <Box>
             <Typography variant="h5">Sign In</Typography>

@@ -91,7 +91,7 @@ const PackagePage = () => {
           fontWeight="bold"
           sx={{ mb: 2 }}
         >
-          Join over 100 Million user using Go Green
+          Join over 1 Million user using Go Green
         </Typography>
         <Typography variant="body1" align="center" sx={{ mb: 4 }}>
           <span>14-day free trial</span> • <span>Cancel anytime</span> •{" "}

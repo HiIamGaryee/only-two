@@ -1,24 +1,27 @@
 import { Box, Typography, Button, Stack, Grid, Avatar } from "@mui/material";
 import coffeeImg from "../../assets/go-green/logo.png";
-import usq1Img from "../../assets/go-green/usq-1.jpeg";
-import usq2Img from "../../assets/go-green/usq-1.jpeg";
-import usq3Img from "../../assets/go-green/usq-3.jpeg";
+
 import { useNavigate } from "react-router-dom";
 import homeBg from "../../assets/home-bg.png";
 import Layout from "../../Layout";
+import usq2Img from "../../assets/go-green/usq-2.svg";
+import usq1Img from "../../assets/go-green/usq-1.svg";
+import usq3Img from "../../assets/go-green/usq-3.svg";
+import StatisticsSection from "../../components/StatisticsSection";
+import TestimonialsCard from "../../components/TestimonialsCard";
 
 const USPList = [
   {
     img: usq1Img,
-    name: "Eco Rewards Program ",
-  },
-  {
-    img: usq2Img,
     name: "Partnerships with Eco Organizations",
   },
   {
-    img: usq3Img,
+    img: usq2Img,
     name: "Green Blog and News Updates",
+  },
+  {
+    img: usq3Img,
+    name: "Eco Rewards Program ",
   },
 ];
 
@@ -141,7 +144,7 @@ const HomePage = () => {
           justifyContent: "center",
           justifyItems: "center",
           flexDirection: "column",
-          p: 4,
+          p: 8,
           bgcolor: "#f4eee1",
         }}
       >
@@ -169,10 +172,17 @@ const HomePage = () => {
                     sx={{
                       width: 80,
                       height: 80,
+                      bgcolor: "transparent",
+                      "& img": {
+                        width: 55,
+                        height: 55,
+                        margin: "auto",
+                      },
                       border: (theme) =>
                         `1px solid ${theme.palette.text.secondary}`,
                     }}
                   />
+
                   <Typography>{item.name}</Typography>
                 </Box>
               </Grid>
@@ -180,21 +190,8 @@ const HomePage = () => {
           </Grid>
         </Box>
       </Box>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          justifyItems: "center",
-          flexDirection: "column",
-          p: "40px",
-          bgcolor: "#e8e7e5",
-        }}
-      >
-        <Typography variant="h4" fontWeight="bold" mb={6}>
-          Best Seller
-        </Typography>
-      </Box>
+      <StatisticsSection />
+      <TestimonialsCard />
     </Layout>
   );
 };

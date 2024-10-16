@@ -15,7 +15,6 @@ import Layout from "../Layout";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { ReactComponent as LeafIcon } from "../assets/icons/leaf.svg";
 import bgiMG from "../assets/home-bg4.png";
 
 const ReferralPage = () => {
@@ -67,9 +66,9 @@ const ReferralPage = () => {
           variant="contained"
           size="large"
           sx={{
-            backgroundColor: "#4caf50",
-            color: "#fff",
-            "&:hover": { backgroundColor: "#388e3c" },
+            bgcolor: "success.main",
+            color: "light.main",
+            "&:hover": { bgcolor: "#388e3c" },
             px: 4,
             py: 1.5,
           }}
@@ -79,7 +78,7 @@ const ReferralPage = () => {
       </Box>
 
       {/* Body Section */}
-      <Box sx={{ p: 4, backgroundColor: "#f1f8e9" }}>
+      <Box sx={{ p: 4, bgcolor: "#f1f8e9" }}>
         <Box sx={{ textAlign: "center", mb: 6 }}>
           <Typography
             variant="h4"
@@ -141,9 +140,9 @@ const ReferralPage = () => {
                 <Button
                   variant="contained"
                   sx={{
-                    backgroundColor: "#4caf50",
-                    color: "#fff",
-                    "&:hover": { backgroundColor: "#388e3c" },
+                    bgcolor: "success.main",
+                    color: "light.main",
+                    "&:hover": { bgcolor: "#388e3c" },
                     width: "100%",
                     py: 1.5,
                   }}
@@ -181,16 +180,16 @@ const ReferralPage = () => {
                   onChange={handleEmailChange}
                   sx={{
                     mb: 2,
-                    backgroundColor: "#ffffff",
+                    bgcolor: "light.main",
                     borderRadius: 2,
                   }}
                 />
                 <Button
                   variant="contained"
                   sx={{
-                    backgroundColor: "#4caf50",
-                    color: "#fff",
-                    "&:hover": { backgroundColor: "#388e3c" },
+                    bgcolor: "success.main",
+                    color: "light.main",
+                    "&:hover": { bgcolor: "#388e3c" },
                     width: "100%",
                     py: 1.5,
                   }}
@@ -215,10 +214,10 @@ const ReferralPage = () => {
             <Button
               variant="contained"
               sx={{
-                backgroundColor: "#0077b5",
+                bgcolor: "#0077b5",
                 minWidth: 48,
                 minHeight: 48,
-                "&:hover": { backgroundColor: "#005582" },
+                "&:hover": { bgcolor: "#005582" },
               }}
             >
               <LinkedInIcon />
@@ -226,10 +225,10 @@ const ReferralPage = () => {
             <Button
               variant="contained"
               sx={{
-                backgroundColor: "#1DA1F2",
+                bgcolor: "#1DA1F2",
                 minWidth: 48,
                 minHeight: 48,
-                "&:hover": { backgroundColor: "#0d8ddb" },
+                "&:hover": { bgcolor: "#0d8ddb" },
               }}
             >
               <TwitterIcon />
@@ -240,8 +239,8 @@ const ReferralPage = () => {
 
       <Box
         sx={{
-          backgroundColor: "#388e3c",
-          color: "#fff",
+          bgcolor: "#388e3c",
+          color: "light.main",
           p: 4,
           mt: 4,
           textAlign: "center",

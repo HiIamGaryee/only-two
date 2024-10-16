@@ -78,7 +78,7 @@ const Footer = () => {
                         color: "light.main",
                         mb: 1,
                         "&:hover": {
-                          color: "#4caf50",
+                          color: "success.main",
                         },
                       }}
                     >
@@ -99,7 +99,7 @@ const Footer = () => {
                 size="small"
                 placeholder="Enter email address"
                 sx={{
-                  backgroundColor: "white",
+                  bgcolor: "white",
                   borderRadius: 1,
                   flex: 1,
                   marginRight: 1,
@@ -107,7 +107,7 @@ const Footer = () => {
               />
               <Button
                 variant="contained"
-                sx={{ backgroundColor: "#ff5722", color: "white" }}
+                sx={{ bgcolor: "#ff5722", color: "white" }}
               >
                 SEND
               </Button>

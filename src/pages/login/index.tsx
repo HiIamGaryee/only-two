@@ -68,7 +68,7 @@ const Login = () => {
       <Paper
         sx={{
           minWidth: "300px",
-          backgroundColor: "light.main",
+          bgcolor: "light.main",
           padding: "20px",
         }}
       >

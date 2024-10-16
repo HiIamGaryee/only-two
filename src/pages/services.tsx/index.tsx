@@ -87,7 +87,7 @@ const ServicesPage = () => {
     <Layout>
       <Box
         sx={{
-          backgroundColor: "light.main",
+          bgcolor: "light.main",
           color: "light.main",
           minHeight: "100vh",
           padding: "50px 20px",
@@ -105,7 +105,7 @@ const ServicesPage = () => {
             <Grid item xs={12} md={6} lg={3} key={index}>
               <Card
                 sx={{
-                  backgroundColor: service.bgColor,
+                  bgcolor: service.bgColor,
                   borderRadius: "10px",
                   padding: "20px",
                   height: "100%",

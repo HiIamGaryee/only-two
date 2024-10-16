@@ -1,19 +1,18 @@
 import React from "react";
 import { Box, Grid, Card, Typography, Button } from "@mui/material";
 import Layout from "../Layout";
-import Image1 from '../eco images/habits.jpg';  
-import Image2 from '../eco images/confuse.jpg'; 
-import Image3 from '../eco images/tap.jpg'; 
-import Image4 from '../eco images/fc.jpg';  
-import Image5 from '../eco images/hqdefault.jpg';  
+import Image1 from "../eco images/habits.jpg";
+import Image2 from "../eco images/confuse.jpg";
+import Image3 from "../eco images/tap.jpg";
+import Image4 from "../eco images/fc.jpg";
+import Image5 from "../eco images/hqdefault.jpg";
 import { useNavigate } from "react-router-dom";
 
 const BlogPage = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
-  
   const handleReadMore = () => {
-    navigate(`/post`);  
+    navigate(`/post`);
   };
 
   return (
@@ -24,8 +23,6 @@ const BlogPage = () => {
 
       <Box sx={{ maxWidth: "100%", overflowY: "auto", px: 4, mb: 6 }}>
         <Grid container spacing={4}>
-
-
           <Grid item xs={12} md={8}>
             <Card
               sx={{
@@ -44,7 +41,7 @@ const BlogPage = () => {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  bgcolor: "rgba(0, 0, 0, 0.5)",
                   padding: 4,
                   display: "flex",
                   flexDirection: "column",
@@ -63,17 +60,16 @@ const BlogPage = () => {
                   Learn how these simple eco-friendly habits can help you make a
                   positive impact on the planet.
                 </Typography>
-                <Button 
+                <Button
                   variant="contained"
-                  sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}
-                  onClick={handleReadMore}  
+                  sx={{ bgcolor: "success.main", color: "#ffffff" }}
+                  onClick={handleReadMore}
                 >
                   Read More
                 </Button>
               </Box>
             </Card>
           </Grid>
-
 
           <Grid item xs={12} md={4}>
             <Card
@@ -93,7 +89,7 @@ const BlogPage = () => {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  bgcolor: "rgba(0, 0, 0, 0.5)",
                   padding: 4,
                   display: "flex",
                   flexDirection: "column",
@@ -108,10 +104,10 @@ const BlogPage = () => {
                 >
                   How to Reduce Plastic in Your Daily Life
                 </Typography>
-                <Button 
-                  variant="contained" 
-                  sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}
-                  onClick={handleReadMore}  
+                <Button
+                  variant="contained"
+                  sx={{ bgcolor: "success.main", color: "#ffffff" }}
+                  onClick={handleReadMore}
                 >
                   Read More
                 </Button>
@@ -137,7 +133,7 @@ const BlogPage = () => {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  bgcolor: "rgba(0, 0, 0, 0.5)",
                   padding: 4,
                   display: "flex",
                   flexDirection: "column",
@@ -152,10 +148,10 @@ const BlogPage = () => {
                 >
                   10 Ways to Conserve Water at Home
                 </Typography>
-                <Button 
-                  variant="contained" 
-                  sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}
-                  onClick={handleReadMore}  
+                <Button
+                  variant="contained"
+                  sx={{ bgcolor: "success.main", color: "#ffffff" }}
+                  onClick={handleReadMore}
                 >
                   Read More
                 </Button>
@@ -182,7 +178,7 @@ const BlogPage = () => {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  bgcolor: "rgba(0, 0, 0, 0.5)",
                   padding: 4,
                   display: "flex",
                   flexDirection: "column",
@@ -197,10 +193,10 @@ const BlogPage = () => {
                 >
                   Renewable Energy: The Future of Green Technology
                 </Typography>
-                <Button 
-                  variant="contained" 
-                  sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}
-                  onClick={handleReadMore}  
+                <Button
+                  variant="contained"
+                  sx={{ bgcolor: "success.main", color: "#ffffff" }}
+                  onClick={handleReadMore}
                 >
                   Read More
                 </Button>
@@ -208,7 +204,6 @@ const BlogPage = () => {
             </Card>
           </Grid>
 
- 
           <Grid item xs={12} md={4}>
             <Card
               sx={{
@@ -227,7 +222,7 @@ const BlogPage = () => {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  bgcolor: "rgba(0, 0, 0, 0.5)",
                   padding: 4,
                   display: "flex",
                   flexDirection: "column",
@@ -242,10 +237,10 @@ const BlogPage = () => {
                 >
                   Composting 101: Turn Your Waste Into Gold
                 </Typography>
-                <Button 
-                  variant="contained" 
-                  sx={{ backgroundColor: "#4caf50", color: "#ffffff" }}
-                  onClick={handleReadMore}  
+                <Button
+                  variant="contained"
+                  sx={{ bgcolor: "success.main", color: "#ffffff" }}
+                  onClick={handleReadMore}
                 >
                   Read More
                 </Button>

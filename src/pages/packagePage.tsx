@@ -79,8 +79,7 @@ const PackagePage = () => {
     <Layout>
       <Box
         sx={{
-          backgroundColor: "light.main",
-
+          bgcolor: "light.main",
           p: 4,
           minHeight: "100vh",
         }}

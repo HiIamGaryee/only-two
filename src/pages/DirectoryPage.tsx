@@ -123,7 +123,7 @@ const DirectoryPage = () => {
     <Layout>
       <Box
         sx={{
-          backgroundColor: "light.main",
+          bgcolor: "light.main",
           color: "white",
           padding: 4,
           minHeight: "100vh",

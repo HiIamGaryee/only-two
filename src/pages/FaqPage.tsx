@@ -66,7 +66,7 @@ const FaqPage = () => {
     <Layout>
       <Box
         sx={{
-          backgroundColor: "light.main",
+          bgcolor: "light.main",
           padding: 4,
           minHeight: "100vh",
         }}
@@ -81,7 +81,7 @@ const FaqPage = () => {
               expanded={expanded === `panel${index}`}
               onChange={handleChange(`panel${index}`)}
               sx={{
-                backgroundColor: "secondary.main",
+                bgcolor: "secondary.main",
                 border: "1px solid #444",
                 marginBottom: 2,
               }}

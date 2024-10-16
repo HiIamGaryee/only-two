@@ -12,7 +12,7 @@ const Error = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        color: "#fff",
+        color: "light.main",
       }}
     />
   );

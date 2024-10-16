@@ -34,8 +34,8 @@ const PaymentPage = () => {
     <Layout>
       <Box
         sx={{
-          padding: 4,
-          backgroundColor: "#f9f9f9",
+          p: 4,
+          bgcolor: "secondary.main",
           minHeight: "100vh",
         }}
       >
@@ -140,7 +140,7 @@ const PaymentPage = () => {
             <Card
               raised
               sx={{
-                padding: 4,
+                p: 4,
                 margin: "auto",
                 bgcolor: "light.light",
               }}

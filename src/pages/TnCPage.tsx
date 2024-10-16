@@ -32,7 +32,7 @@ export const TnCPage = () => {
         <Box
           sx={{
             padding: 4,
-            backgroundColor: "background.paper",
+            bgcolor: "background.paper",
             color: "text.primary",
           }}
         >

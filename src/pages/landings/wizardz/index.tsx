@@ -90,7 +90,7 @@ const WizardzPage = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "light.main",
+        bgcolor: "light.main",
         display: "flex",
         flexDirection: "column",
         color: "white",
@@ -99,11 +99,7 @@ const WizardzPage = () => {
         overflowY: "auto",
       }}
     >
-      <AppBar
-        position="static"
-        color="primary"
-        sx={{ backgroundColor: "#161d2f" }}
-      >
+      <AppBar position="static" color="primary" sx={{ bgcolor: "#161d2f" }}>
         <Toolbar>
           <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
             <img
@@ -137,7 +133,7 @@ const WizardzPage = () => {
       </AppBar>
       <Box
         sx={{
-          backgroundColor: "light.main",
+          bgcolor: "light.main",
           color: "white",
           p: 4,
           minHeight: "100vh",
@@ -157,7 +153,7 @@ const WizardzPage = () => {
         <Grid container spacing={4}>
           {serviceList.map((service, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
-              <Card sx={{ backgroundColor: "#2a2a2a", color: "white" }}>
+              <Card sx={{ bgcolor: "#2a2a2a", color: "white" }}>
                 <CardContent sx={{ textAlign: "center" }}>
                   <Typography variant="h5" fontWeight="bold">
                     {service.title}
@@ -175,7 +171,7 @@ const WizardzPage = () => {
       <Box
         component="footer"
         sx={{
-          backgroundColor: "#161d2f",
+          bgcolor: "#161d2f",
           padding: 4,
           display: "flex",
           justifyContent: "space-between",
@@ -229,7 +225,7 @@ const WizardzPage = () => {
               size="small"
               placeholder="Enter email address"
               sx={{
-                backgroundColor: "white",
+                bgcolor: "white",
                 borderRadius: 1,
                 flex: 1,
                 marginRight: 1,
@@ -237,7 +233,7 @@ const WizardzPage = () => {
             />
             <Button
               variant="contained"
-              sx={{ backgroundColor: "#ff5722", color: "white" }}
+              sx={{ bgcolor: "#ff5722", color: "white" }}
             >
               SEND
             </Button>

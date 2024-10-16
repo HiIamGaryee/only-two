@@ -51,8 +51,8 @@ const SignUp = () => {
       <Paper
         sx={{
           minWidth: "300px",
-          backgroundColor: "light.main",
-          padding: "20px",
+          bgcolor: "light.main",
+          p: "20px",
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center", gap: "2px" }}>

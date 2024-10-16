@@ -8,6 +8,29 @@ import Image4 from "../eco images/fc.jpg";
 import Image5 from "../eco images/hqdefault.jpg";
 import { useNavigate } from "react-router-dom";
 
+const blogPosts = [
+  {
+    id: 2,
+    title: "How to Reduce Plastic in Your Daily Life",
+    image: Image2,
+  },
+  {
+    id: 3,
+    title: "10 Ways to Conserve Water at Home",
+    image: Image3,
+  },
+  {
+    id: 4,
+    title: "Renewable Energy: The Future of Green Technology",
+    image: Image4,
+  },
+  {
+    id: 5,
+    title: "Composting 101: Turn Your Waste Into Gold",
+    image: Image5,
+  },
+];
+
 const BlogPage = () => {
   const navigate = useNavigate();
 
@@ -70,183 +93,52 @@ const BlogPage = () => {
               </Box>
             </Card>
           </Grid>
-
-          <Grid item xs={12} md={4}>
-            <Card
-              sx={{
-                backgroundImage: `url(${Image2})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                minHeight: "200px",
-                position: "relative",
-                color: "#ffffff",
-              }}
-            >
-              <Box
+          {/* Blog 2-5 */}
+          {blogPosts.map((post) => (
+            <Grid item xs={12} md={4} key={post.id}>
+              <Card
                 sx={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  bgcolor: "rgba(0, 0, 0, 0.5)",
-                  padding: 4,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-end",
+                  backgroundImage: `url(${post.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  minHeight: "200px",
+                  position: "relative",
+                  color: "#ffffff",
                 }}
               >
-                <Typography
-                  variant="h6"
-                  fontWeight="bold"
-                  gutterBottom
-                  sx={{ color: "#ffffff" }}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    bgcolor: "rgba(0, 0, 0, 0.5)",
+                    padding: 4,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-end",
+                  }}
                 >
-                  How to Reduce Plastic in Your Daily Life
-                </Typography>
-                <Button
-                  variant="contained"
-                  sx={{ bgcolor: "success.main", color: "#ffffff" }}
-                  onClick={handleReadMore}
-                >
-                  Read More
-                </Button>
-              </Box>
-            </Card>
-          </Grid>
-
-          {/* Third Blog Post */}
-          <Grid item xs={12} md={4}>
-            <Card
-              sx={{
-                backgroundImage: `url(${Image3})`,
-                backgroundPosition: "center",
-                minHeight: "200px",
-                position: "relative",
-                color: "#ffffff",
-              }}
-            >
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  bgcolor: "rgba(0, 0, 0, 0.5)",
-                  padding: 4,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-end",
-                }}
-              >
-                <Typography
-                  variant="h6"
-                  fontWeight="bold"
-                  gutterBottom
-                  sx={{ color: "#ffffff" }}
-                >
-                  10 Ways to Conserve Water at Home
-                </Typography>
-                <Button
-                  variant="contained"
-                  sx={{ bgcolor: "success.main", color: "#ffffff" }}
-                  onClick={handleReadMore}
-                >
-                  Read More
-                </Button>
-              </Box>
-            </Card>
-          </Grid>
-
-          {/* Fourth Blog Post */}
-          <Grid item xs={12} md={4}>
-            <Card
-              sx={{
-                backgroundImage: `url(${Image4})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                minHeight: "200px",
-                position: "relative",
-                color: "#ffffff",
-              }}
-            >
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  bgcolor: "rgba(0, 0, 0, 0.5)",
-                  padding: 4,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-end",
-                }}
-              >
-                <Typography
-                  variant="h6"
-                  fontWeight="bold"
-                  gutterBottom
-                  sx={{ color: "#ffffff" }}
-                >
-                  Renewable Energy: The Future of Green Technology
-                </Typography>
-                <Button
-                  variant="contained"
-                  sx={{ bgcolor: "success.main", color: "#ffffff" }}
-                  onClick={handleReadMore}
-                >
-                  Read More
-                </Button>
-              </Box>
-            </Card>
-          </Grid>
-
-          <Grid item xs={12} md={4}>
-            <Card
-              sx={{
-                backgroundImage: `url(${Image5})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                minHeight: "200px",
-                position: "relative",
-                color: "#ffffff",
-              }}
-            >
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  bgcolor: "rgba(0, 0, 0, 0.5)",
-                  padding: 4,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-end",
-                }}
-              >
-                <Typography
-                  variant="h6"
-                  fontWeight="bold"
-                  gutterBottom
-                  sx={{ color: "#ffffff" }}
-                >
-                  Composting 101: Turn Your Waste Into Gold
-                </Typography>
-                <Button
-                  variant="contained"
-                  sx={{ bgcolor: "success.main", color: "#ffffff" }}
-                  onClick={handleReadMore}
-                >
-                  Read More
-                </Button>
-              </Box>
-            </Card>
-          </Grid>
+                  <Typography
+                    variant="h6"
+                    fontWeight="bold"
+                    gutterBottom
+                    sx={{ color: "#ffffff" }}
+                  >
+                    {post.title}
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    sx={{ bgcolor: "success.main", color: "#ffffff" }}
+                    onClick={handleReadMore}
+                  >
+                    Read More
+                  </Button>
+                </Box>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </Layout>

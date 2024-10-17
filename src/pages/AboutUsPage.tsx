@@ -14,8 +14,10 @@ import { Facebook, Twitter, LinkedIn, Email, Print } from "@mui/icons-material";
 import Layout from "../Layout";
 import imagePlaceholder from "../eco images/ECO GREEN leaf 1.webp";
 import imagePlaceholder1 from "../eco images/Green-Nature-Eco-Friendly-Wallpapers-Large-37.jpg";
+import { useTranslation } from "react-i18next"; // Import the translation hook
 
 const AboutUsPage = () => {
+  const { t } = useTranslation(); // Initialize translation
   const [isContactVisible, setIsContactVisible] = useState(false);
 
   useEffect(() => {
@@ -47,23 +49,23 @@ const AboutUsPage = () => {
             }}
           >
             <Typography variant="h5" fontWeight="bold" gutterBottom>
-              About Us
+              {t("aboutUs")} {/* Translate "About Us" */}
             </Typography>
             <List>
               <ListItem button>
-                <ListItemText primary="Leadership" />
+                <ListItemText primary={t("leadership")} /> {/* Leadership */}
               </ListItem>
               <ListItem button>
-                <ListItemText primary="Awards & Recognition" />
+                <ListItemText primary={t("awardsRecognition")} /> {/* Awards */}
               </ListItem>
               <ListItem button>
-                <ListItemText primary="Investors" />
+                <ListItemText primary={t("investors")} /> {/* Investors */}
               </ListItem>
               <ListItem button>
-                <ListItemText primary="Suppliers" />
+                <ListItemText primary={t("suppliers")} /> {/* Suppliers */}
               </ListItem>
               <ListItem button>
-                <ListItemText primary="Compliance Overview" />
+                <ListItemText primary={t("complianceOverview")} /> {/* Compliance */}
               </ListItem>
             </List>
 
@@ -92,22 +94,16 @@ const AboutUsPage = () => {
             <Grid container spacing={4} alignItems="center">
               <Grid item xs={12} md={6}>
                 <Typography variant="h6" color="text.secondary" gutterBottom>
-                  OUR STORY
+                  {t("ourStoryTitle")} {/* "Our Story" */}
                 </Typography>
                 <Typography variant="h4" fontWeight="bold" gutterBottom>
-                  We Support Sustainable Living & Green Innovation
+                  {t("ourMission")} {/* "We Support Sustainable Living & Green Innovation" */}
                 </Typography>
                 <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-                  Our mission is simple: to contribute to the growth of
-                  sustainable and eco-friendly solutions by helping green
-                  projects flourish. We believe that conscious living and
-                  environmentally-friendly innovation are keys to preserving our
-                  planet.
+                  {t("ourStoryDescription1")} {/* Story Description */}
                   <br />
                   <br />
-                  From eco-friendly products to green technology, we are
-                  committed to supporting projects that not only reduce waste
-                  but also have a lasting positive impact on our environment.
+                  {t("ourStoryDescription2")} {/* Another part of the story */}
                 </Typography>
               </Grid>
 
@@ -143,21 +139,13 @@ const AboutUsPage = () => {
 
               <Grid item xs={12} md={6}>
                 <Typography variant="h4" fontWeight="bold" gutterBottom>
-                  Why We Care About Sustainability
+                  {t("whyWeCareTitle")} {/* "Why We Care About Sustainability" */}
                 </Typography>
                 <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-                  We focus on sustainability because we believe it is the
-                  foundation for a thriving future. Our work supports innovative
-                  projects that aim to reduce carbon footprints, save energy,
-                  and enhance the use of renewable resources. We’re passionate
-                  about helping the world move towards a more eco-conscious
-                  lifestyle.
+                  {t("whyWeCareDescription1")} {/* First part of description */}
                   <br />
                   <br />
-                  Whether it's through contributing to renewable energy,
-                  sustainable agriculture, or eco-friendly products, we are here
-                  to make a difference. Together, we can support a greener
-                  planet for future generations.
+                  {t("whyWeCareDescription2")} {/* Second part of description */}
                 </Typography>
               </Grid>
             </Grid>
@@ -173,11 +161,10 @@ const AboutUsPage = () => {
               }}
             >
               <Typography variant="h4" fontWeight="bold" gutterBottom>
-                Get In Touch
+                {t("getInTouchTitle")} {/* "Get In Touch" */}
               </Typography>
               <Typography variant="body1" color="text.secondary" gutterBottom>
-                Reach out to us through the form below to learn more about our
-                sustainability efforts.
+                {t("getInTouchDescription")} {/* Reach out description */}
               </Typography>
 
               <Box
@@ -189,17 +176,17 @@ const AboutUsPage = () => {
                   maxWidth: 600,
                 }}
               >
-                <TextField label="Your Name" variant="outlined" fullWidth />
-                <TextField label="Your Email" variant="outlined" fullWidth />
+                <TextField label={t("yourName")} variant="outlined" fullWidth /> {/* Name Field */}
+                <TextField label={t("yourEmail")} variant="outlined" fullWidth /> {/* Email Field */}
                 <TextField
-                  label="Message"
+                  label={t("yourMessage")} /* Message Field */
                   variant="outlined"
                   multiline
                   rows={4}
                   fullWidth
                 />
                 <Button variant="contained" color="primary">
-                  Submit
+                  {t("submit")} {/* Submit Button */}
                 </Button>
               </Box>
             </Box>

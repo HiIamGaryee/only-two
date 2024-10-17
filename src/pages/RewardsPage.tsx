@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import Layout from "../Layout";
+import { useTranslation } from "react-i18next"; // Import the translation hook
 import Image1 from "../eco images/bulp.jpg";
 import Image2 from "../eco images/GB.webp";
 import Image3 from "../eco images/SOlar.webp";
@@ -23,7 +24,8 @@ import Image4 from "../eco images/TB.jpg";
 import Image5 from "../eco images/wrap.jpg";
 
 const RewardsPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const { t } = useTranslation(); // Initialize translation hook
+  const [selectedCategory, setSelectedCategory] = useState<string>(t("all"));
   const [currency, setCurrency] = useState<string>("points");
   const [open, setOpen] = useState(false);
   const [selectedReward, setSelectedReward] = useState<any>(null);
@@ -33,55 +35,53 @@ const RewardsPage = () => {
   const rewards = [
     {
       id: 1,
-      category: "Recyclable Materials",
-      name: "Reusable Grocery Bags (Pack of 10)",
+      category: t("recyclableMaterials"),
+      name: t("Reusable Grocery Bags (Pack of 10)"),
       points: 10000,
       discount: "-5%",
       image: Image2,
-      description:
-        "High quality reusable grocery bags made from eco-friendly materials.",
+      description: t("High quality reusable grocery bags made from eco-friendly materials."),
     },
     {
       id: 2,
-      category: "Energy Saving",
-      name: "Solar-powered Phone Charger",
+      category: t("energySaving"),
+      name: t("Solar-powered Phone Charger"),
       points: 35000,
       discount: "-10%",
       image: Image3,
-      description: "Eco-friendly solar-powered charger for your phone.",
+      description: t("Eco-friendly solar-powered charger for your phone."),
     },
     {
       id: 3,
-      category: "Personal Care",
-      name: "Bamboo Toothbrush Set (Pack of 4)",
+      category: t("personalCare"),
+      name: t("Bamboo Toothbrush Set (Pack of 4)"),
       points: 5500,
       discount: "",
       image: Image4,
-      description: "Sustainable bamboo toothbrush set with soft bristles.",
+      description: t("Sustainable bamboo toothbrush set with soft bristles."),
     },
     {
       id: 4,
-      category: "Energy Saving",
-      name: "Energy-Efficient LED Bulbs (Pack of 6)",
+      category: t("energySaving"),
+      name: t("Energy-Efficient LED Bulbs (Pack of 6)"),
       points: 20000,
       discount: "-15%",
       image: Image1,
-      description:
-        "Energy-efficient LED bulbs that save power and last longer.",
+      description: t("Energy-efficient LED bulbs that save power and last longer."),
     },
     {
       id: 5,
-      category: "Sustainable Living",
-      name: "Compostable Food Wraps (Set of 3)",
+      category: t("sustainableLiving"),
+      name: t("Compostable Food Wraps (Set of 3)"),
       points: 15000,
       discount: "-8%",
       image: Image5,
-      description: "Compostable food wraps, a great alternative to plastic.",
+      description: t("Compostable food wraps, a great alternative to plastic."),
     },
   ];
 
   const filteredRewards =
-    selectedCategory === "All"
+    selectedCategory === t("all")
       ? rewards
       : rewards.filter((item) => item.category === selectedCategory);
 
@@ -92,13 +92,11 @@ const RewardsPage = () => {
     setOpen(true);
   };
 
-  // Handle Modal Close
   const handleClose = () => {
     setOpen(false);
     setSelectedReward(null);
   };
 
-  // Handle quantity change
   const handleQuantityChange = (change: number) => {
     setQuantity((prev) => Math.max(1, prev + change));
   };
@@ -117,7 +115,7 @@ const RewardsPage = () => {
           fontWeight="bold"
           sx={{ my: 2 }}
         >
-          Rewards Page
+          {t("rewardsPageTitle")}
         </Typography>
 
         <Box
@@ -160,23 +158,23 @@ const RewardsPage = () => {
               },
             }}
           >
-            Points
+            {t("points")}
           </Button>
 
           <Button
-            onClick={() => setCurrency("MYR")}
+            onClick={() => setCurrency("myr")}
             sx={{
               width: "50%",
               zIndex: 2,
-              color: currency === "MYR" ? "light.main" : "dark.main",
-              fontWeight: currency === "MYR" ? "bold" : "normal",
+              color: currency === "myr" ? "light.main" : "dark.main",
+              fontWeight: currency === "myr" ? "bold" : "normal",
               bgcolor: "transparent",
               "&:hover": {
                 bgcolor: "transparent",
               },
             }}
           >
-            MYR
+            {t("myr")}
           </Button>
         </Box>
 
@@ -185,11 +183,11 @@ const RewardsPage = () => {
         <Container>
           <Grid container spacing={2} justifyContent="center" sx={{ mb: 3 }}>
             {[
-              "All",
-              "Recyclable Materials",
-              "Energy Saving",
-              "Personal Care",
-              "Sustainable Living",
+              t("all"),
+              t("recyclableMaterials"),
+              t("energySaving"),
+              t("personalCare"),
+              t("sustainableLiving"),
             ].map((category) => (
               <Grid item key={category}>
                 <Button
@@ -211,7 +209,6 @@ const RewardsPage = () => {
           </Grid>
         </Container>
 
-        {/* Rewards List */}
         <Container>
           <Grid container spacing={3}>
             {filteredRewards.map((reward) => (
@@ -241,7 +238,7 @@ const RewardsPage = () => {
 
                     <Typography sx={{ color: "primary.dark" }}>
                       {currency === "points"
-                        ? `${reward.points} points`
+                        ? `${reward.points} ${t("points")}`
                         : `MYR ${convertToMYR(reward.points)}`}
                     </Typography>
 
@@ -266,7 +263,7 @@ const RewardsPage = () => {
                       }}
                       onClick={() => handleRedeem(reward)}
                     >
-                      Redeem
+                      {t("redeem")}
                     </Button>
                   </CardActions>
                 </Card>
@@ -316,14 +313,12 @@ const RewardsPage = () => {
 
                     <Typography sx={{ color: "primary.dark", mb: 2 }}>
                       {currency === "points"
-                        ? `${selectedReward.points} points`
+                        ? `${selectedReward.points} ${t("points")}`
                         : `MYR ${convertToMYR(selectedReward.points)}`}
                     </Typography>
 
                     <Box display="flex" alignItems="center" sx={{ mb: 2 }}>
-                      <Button onClick={() => handleQuantityChange(-1)}>
-                        -
-                      </Button>
+                      <Button onClick={() => handleQuantityChange(-1)}>-</Button>
                       <TextField
                         value={quantity}
                         onChange={(e) =>
@@ -348,7 +343,7 @@ const RewardsPage = () => {
                       }}
                       onClick={handleClose}
                     >
-                      Confirm Redemption
+                      {t("confirmRedemption")}
                     </Button>
                   </Box>
                 </Box>

@@ -6,22 +6,26 @@ import {
   Button,
   Modal,
   IconButton,
+  TextField,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Layout from "../Layout";
 import Image1 from "../eco images/habits.jpg";
 import { Facebook, WhatsApp, ContentCopy } from "@mui/icons-material";
+import { useTranslation } from "react-i18next"; // Import the translation hook
 
 const PostPage = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation(); // Initialize translation
   const [open, setOpen] = useState(false);
+  const [url, setUrl] = useState(window.location.href); // Set the URL to share
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(window.location.href);
-    alert("Post URL copied to clipboard!");
+    navigator.clipboard.writeText(url);
+    alert(t("copySuccess")); // Use translation for alert
   };
 
   return (
@@ -49,7 +53,7 @@ const PostPage = () => {
             color: "light.main",
           }}
         >
-          Return to Blog
+          {t("returnToBlog")} {/* Use translation for button */}
         </Button>
 
         <Box
@@ -72,14 +76,13 @@ const PostPage = () => {
             gutterBottom
             sx={{ color: "light.main", textAlign: "center" }}
           >
-            The Top Eco-Friendly Habits to Start Today
+            {t("postTitle")} {/* Use translation for post title */}
           </Typography>
           <Typography
             variant="body1"
             sx={{ mb: 2, color: "light.main", textAlign: "center" }}
           >
-            Discover how small eco-friendly habits can help you make a positive
-            impact on the planet.
+            {t("postDescription")} {/* Use translation for post description */}
           </Typography>
         </Box>
       </Box>
@@ -90,47 +93,38 @@ const PostPage = () => {
             variant="h4"
             sx={{ mb: 2, color: "#388e3c", fontWeight: "bold" }}
           >
-            Introduction to Eco-Friendly Living
+            {t("introTitle")} {/* Use translation for introduction title */}
           </Typography>
           <Typography variant="body1" sx={{ mb: 4 }}>
-            Eco-friendly living is all about reducing your carbon footprint,
-            conserving resources, and living a more sustainable lifestyle. Small
-            actions can create lasting change, and by adopting eco-friendly
-            habits, you can help preserve the planet for future generations.
+            {t("introDescription")} {/* Use translation for introduction description */}
           </Typography>
 
           <Typography
             variant="h5"
             sx={{ mb: 2, color: "#388e3c", fontWeight: "bold" }}
           >
-            Simple Habits You Can Start Today
+            {t("simpleHabitsTitle")} {/* Use translation for simple habits title */}
           </Typography>
           <Typography variant="body1" sx={{ mb: 4 }}>
-            Here are some simple habits that you can start today to make your
-            life more eco-friendly:
+            {t("simpleHabitsDescription")} {/* Use translation for habits description */}
           </Typography>
 
           <ul style={{ lineHeight: 2, color: "#388e3c" }}>
-            <li>Switch to reusable bags, bottles, and containers.</li>
-            <li>
-              Reduce plastic use by opting for alternatives like glass or metal.
-            </li>
-            <li>Conserve water by fixing leaks and taking shorter showers.</li>
-            <li>Compost food scraps to reduce waste.</li>
-            <li>Support eco-friendly products and companies.</li>
+            <li>{t("habit1")}</li> {/* Habit 1 */}
+            <li>{t("habit2")}</li> {/* Habit 2 */}
+            <li>{t("habit3")}</li> {/* Habit 3 */}
+            <li>{t("habit4")}</li> {/* Habit 4 */}
+            <li>{t("habit5")}</li> {/* Habit 5 */}
           </ul>
 
           <Typography
             variant="h5"
             sx={{ mt: 4, mb: 2, color: "#388e3c", fontWeight: "bold" }}
           >
-            The Impact of These Changes
+            {t("impactTitle")} {/* Use translation for impact title */}
           </Typography>
           <Typography variant="body1" sx={{ mb: 4 }}>
-            Every small change adds up. By reducing waste, conserving energy,
-            and being mindful of our consumption, we can help reduce the harmful
-            effects on the environment and create a healthier world for future
-            generations.
+            {t("impactDescription")} {/* Use translation for impact description */}
           </Typography>
 
           <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
@@ -139,12 +133,13 @@ const PostPage = () => {
               sx={{ bgcolor: "success.main", color: "light.main" }}
               onClick={handleOpen}
             >
-              Share This Post
+              {t("shareThisPost")} {/* Use translation for Share button */}
             </Button>
           </Box>
         </Box>
       </Container>
 
+      {/* Modal for sharing options */}
       <Modal
         open={open}
         onClose={handleClose}
@@ -157,50 +152,80 @@ const PostPage = () => {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: 300,
+            width: 350,
             bgcolor: "background.paper",
-            border: "2px solid #000",
+            borderRadius: "10px", // Make the window rounded
             boxShadow: 24,
             p: 4,
             textAlign: "center",
           }}
         >
-          <Typography variant="h6" gutterBottom>
-            Share This Post
+          <Typography variant="h6" gutterBottom sx={{ fontWeight: "bold" }}>
+            {t("sharePost")} {/* Use translation for modal title */}
           </Typography>
+
+          {/* Display the URL */}
+          <TextField
+            value={url}
+            InputProps={{
+              readOnly: true,
+            }}
+            sx={{
+              mb: 2,
+              textAlign: "center",
+              width: "100%",
+              "& .MuiInputBase-root": {
+                borderRadius: "50px",
+              },
+            }}
+          />
+
           <Typography variant="body1" sx={{ mb: 2 }}>
-            Copy the link or share via:
+            {t("shareOptions")} {/* Use translation for share options */}
           </Typography>
+
           <Box sx={{ display: "flex", justifyContent: "space-around", mb: 2 }}>
             {/* WhatsApp Share */}
             <IconButton
               color="success"
               component="a"
               href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
-                window.location.href
+                url
               )}`}
               target="_blank"
             >
               <WhatsApp />
             </IconButton>
 
+            {/* Facebook Share */}
             <IconButton
               color="primary"
               component="a"
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                window.location.href
+                url
               )}`}
               target="_blank"
             >
               <Facebook />
             </IconButton>
+
             {/* Copy Link */}
             <IconButton color="secondary" onClick={handleCopy}>
               <ContentCopy />
             </IconButton>
           </Box>
-          <Button onClick={handleClose} variant="contained" color="primary">
-            Close
+
+          <Button
+            onClick={handleClose}
+            variant="contained"
+            sx={{
+              bgcolor: "success.main",
+              color: "light.main",
+              borderRadius: "50px", // Round the Close button
+              px: 4, // Add padding
+            }}
+          >
+            {t("close")} {/* Use translation for Close button */}
           </Button>
         </Box>
       </Modal>

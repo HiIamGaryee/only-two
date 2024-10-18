@@ -15,8 +15,12 @@ import Layout from "../Layout";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
+<<<<<<< HEAD
 import bgiMG from "../assets/home-bg4.png";
+=======
+>>>>>>> 1315492961729d8d29e9e6c9ad8b45764472ae96
 import { useTranslation } from "react-i18next";
+import bgiMG from "../assets/home-bg4.png";
 
 const ReferralPage = () => {
   const { t } = useTranslation();
@@ -244,9 +248,7 @@ const ReferralPage = () => {
           textAlign: "center",
         }}
       >
-        <Typography variant="body1">
-          {t("sharingImpact")}
-        </Typography>
+        <Typography variant="body1">{t("sharingImpact")}</Typography>
       </Box>
     </Layout>
   );

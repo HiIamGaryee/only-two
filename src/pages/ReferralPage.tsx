@@ -15,17 +15,12 @@ import Layout from "../Layout";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { useTranslation } from "react-i18next"; // Import the translation hook
-import bgiMG from "../assets/home-bg4.png";
 import { useTranslation } from "react-i18next";
+import bgiMG from "../assets/home-bg4.png";
 
 const ReferralPage = () => {
-<<<<<<< HEAD
-  const { t } = useTranslation(); // Initialize translation hook
-=======
   const { t } = useTranslation();
 
->>>>>>> 633bb76acd26bd5ee6b5b95473618709d33c7eee
   const [email, setEmail] = useState("");
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -80,11 +75,7 @@ const ReferralPage = () => {
             py: 1.5,
           }}
         >
-<<<<<<< HEAD
-          {t("referNow")}
-=======
           {t("refer_now")}
->>>>>>> 633bb76acd26bd5ee6b5b95473618709d33c7eee
         </Button>
       </Box>
 
@@ -253,9 +244,7 @@ const ReferralPage = () => {
           textAlign: "center",
         }}
       >
-        <Typography variant="body1">
-          {t("sharingImpact")}
-        </Typography>
+        <Typography variant="body1">{t("sharingImpact")}</Typography>
       </Box>
     </Layout>
   );

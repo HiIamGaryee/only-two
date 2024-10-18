@@ -41,7 +41,7 @@ const SignUp = () => {
     <Box
       sx={{
         backgroundImage: `url(${loginBg})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         height: "100vh",
         display: "flex",
         justifyContent: "center",

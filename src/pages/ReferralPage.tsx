@@ -15,9 +15,11 @@ import Layout from "../Layout";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { useTranslation } from "react-i18next"; // Import the translation hook
 import bgiMG from "../assets/home-bg4.png";
 
 const ReferralPage = () => {
+  const { t } = useTranslation(); // Initialize translation hook
   const [email, setEmail] = useState("");
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,19 +50,18 @@ const ReferralPage = () => {
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
           }}
         >
-          Join the Green Movement 🌱
+          {t("joinGreenMovement")}
         </Typography>
         <Typography
           variant="h6"
           sx={{
             color: "light.main",
-
             textAlign: "center",
             mb: 4,
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
           }}
         >
-          Support sustainable products and ideas by referring your friends!
+          {t("supportSustainableProducts")}
         </Typography>
         <Button
           variant="contained"
@@ -73,7 +74,7 @@ const ReferralPage = () => {
             py: 1.5,
           }}
         >
-          Refer Now
+          {t("referNow")}
         </Button>
       </Box>
 
@@ -84,15 +85,13 @@ const ReferralPage = () => {
             variant="h4"
             sx={{ fontWeight: "bold", color: "#1b5e20", mb: 2 }}
           >
-            How It Works
+            {t("howItWorks")}
           </Typography>
           <Typography
             variant="body1"
             sx={{ fontSize: "1.2rem", color: "#4e342e" }}
           >
-            Invite your friends to join the platform. For every referral, you
-            contribute directly to sustainable projects and receive green
-            rewards!
+            {t("inviteFriends")}
           </Typography>
         </Box>
 
@@ -114,12 +113,10 @@ const ReferralPage = () => {
                   color="primary"
                   gutterBottom
                 >
-                  Your Referrals
+                  {t("yourReferrals")}
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 2 }}>
-                  Help us grow the green community! Share your referral link
-                  with friends, and for each sign-up, earn rewards like
-                  eco-friendly products or green credits.
+                  {t("helpGrowCommunity")}
                 </Typography>
                 <Divider sx={{ mb: 2 }} />
                 <TextField
@@ -147,7 +144,7 @@ const ReferralPage = () => {
                     py: 1.5,
                   }}
                 >
-                  Copy Referral Link
+                  {t("copyReferralLink")}
                 </Button>
               </CardContent>
             </Card>
@@ -170,10 +167,10 @@ const ReferralPage = () => {
                   color="primary"
                   gutterBottom
                 >
-                  Invite Friends via Email
+                  {t("inviteFriendsViaEmail")}
                 </Typography>
                 <TextField
-                  label="Enter email addresses"
+                  label={t("enterEmailAddresses")}
                   variant="outlined"
                   fullWidth
                   value={email}
@@ -194,7 +191,7 @@ const ReferralPage = () => {
                     py: 1.5,
                   }}
                 >
-                  Send Invites
+                  {t("sendInvites")}
                 </Button>
               </CardContent>
             </Card>
@@ -208,7 +205,7 @@ const ReferralPage = () => {
             color="primary"
             sx={{ mb: 2 }}
           >
-            Spread the Word on Social Media 🌍
+            {t("spreadTheWord")}
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
             <Button
@@ -247,8 +244,7 @@ const ReferralPage = () => {
         }}
       >
         <Typography variant="body1">
-          By sharing, you’re helping the environment and making a direct impact
-          on sustainability projects worldwide.
+          {t("sharingImpact")}
         </Typography>
       </Box>
     </Layout>

@@ -71,19 +71,19 @@ const AboutUsPage = () => {
 
             <Box sx={{ mt: 4, display: "flex", gap: 2 }}>
               <Link href="#" color="inherit">
-                <Facebook />
+                <Facebook sx={{ color: "#4267B2" }} /> {/* Custom Facebook color */}
               </Link>
               <Link href="#" color="inherit">
-                <Twitter />
+                <Twitter sx={{ color: "#1DA1F2" }} /> {/* Custom Twitter color */}
               </Link>
               <Link href="#" color="inherit">
-                <LinkedIn />
+                <LinkedIn sx={{ color: "#0077B5" }} /> {/* Custom LinkedIn color */}
               </Link>
               <Link href="#" color="inherit">
-                <Email />
+                <Email sx={{ color: "#D44638" }} /> {/* Custom Email color */}
               </Link>
               <Link href="#" color="inherit">
-                <Print />
+                <Print sx={{ color: "#000000" }} /> {/* Custom Print color */}
               </Link>
             </Box>
           </Box>

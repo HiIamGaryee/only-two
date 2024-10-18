@@ -1,31 +1,36 @@
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
 import Layout from "../Layout";
+import { useTranslation } from "react-i18next";
 
 const sections = [
   {
-    title: "General Conditions",
-    content: `By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. In addition, when using this website's particular services, you shall be subject to any posted guidelines or rules applicable to such services. Any participation in this service will constitute acceptance of this agreement. If you do not agree to abide by the above, please do not use this service.`,
+    code: "sec1",
+    title: "general_conditions_title",
+    desc: "general_conditions_desc",
   },
   {
-    title: "Intellectual Property",
-    content: `The content on this website, including without limitation, the text, software, scripts, graphics, photos, sounds, music, videos, and interactive features and the trademarks, service marks and logos contained therein are owned by or licensed to us and are subject to copyright and other intellectual property rights under national laws and international treaties.`,
+    code: "sec2",
+
+    title: "intellectual_property_title",
+    desc: "intellectual_property_desc",
   },
   {
-    title: "User Obligations",
-    content: `You agree to use the website only for purposes that are permitted by (a) the Terms and Conditions and (b) any applicable law, regulation, or generally accepted practices or guidelines in the relevant jurisdictions.`,
+    code: "sec3",
+    title: "user_obligations_title",
+    desc: "user_obligations_desc",
   },
   {
-    title: "Limitation of Liability",
-    content: `In no event shall we be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data or other intangible losses resulting from the use of or inability to use the service.`,
+    code: "sec4",
+    title: "limitation_of_liability_title",
+    desc: "limitation_of_liability_desc",
   },
-  {
-    title: "Termination",
-    content: `We may terminate or suspend access to our service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms and Conditions.`,
-  },
+  { code: "sec5", title: "termination_title", desc: "termination_desc" },
 ];
 
-export const TnCPage = () => {
+const TnCPage = () => {
+  const { t } = useTranslation();
+
   return (
     <Layout>
       <Container maxWidth="md" sx={{ py: 2 }}>
@@ -42,14 +47,14 @@ export const TnCPage = () => {
             fontWeight="bold"
             sx={{ mb: 4 }}
           >
-            Terms and Conditions
+            {t("terms_and_conditions_title")}
           </Typography>
           {sections.map((section, index) => (
             <Box key={index} sx={{ marginBottom: 4 }}>
               <Typography variant="h5" fontWeight="bold" sx={{ mb: 1 }}>
-                {section.title}
+                {t(section.title)}
               </Typography>
-              <Typography variant="body1">{section.content}</Typography>
+              <Typography variant="body1">{t(section.desc)}</Typography>
             </Box>
           ))}
         </Box>

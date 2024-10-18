@@ -37,21 +37,19 @@ const Footer = () => {
         width: "100%",
         color: "white",
         flexWrap: "wrap",
-        maxHeight: "250px",
       }}
     >
       <Box
         sx={{ display: "flex", justifyContent: "space-between", flexGrow: 1 }}
       >
         <Box
-          sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: "space-between",
+            flexGrow: 1,
+          }}
         >
-          <img
-            src="/logo.png"
-            alt="Logo"
-            style={{ maxHeight: 50, marginRight: 16, cursor: "pointer" }}
-            onClick={() => navigate(`/`)}
-          />
           <Box
             sx={{
               display: "flex",
@@ -63,7 +61,7 @@ const Footer = () => {
                 key={section.title}
                 sx={{ flex: 1, minWidth: 200, alignItems: "strat" }}
               >
-                <Typography variant="h6" sx={{ mb: 2, color: "white" }}>
+                <Typography variant="h6" sx={{ mt: 2, color: "white" }}>
                   {section.title}
                 </Typography>
                 {section.links.map((item) => (
@@ -89,8 +87,8 @@ const Footer = () => {
               </Box>
             ))}
           </Box>
-          <Box sx={{ flex: 1, minWidth: 200, maxWidth: 400 }}>
-            <Typography variant="h6" sx={{ mb: 2, color: "white" }}>
+          <Box sx={{ flex: 1, minWidth: 200, maxWidth: 400, mt: 2 }}>
+            <Typography variant="h6" sx={{ color: "white" }}>
               SUBSCRIBE
             </Typography>
             <Box sx={{ display: "flex", mb: 2 }}>
@@ -102,7 +100,7 @@ const Footer = () => {
                   bgcolor: "white",
                   borderRadius: 1,
                   flex: 1,
-                  marginRight: 1,
+                  mr: 1,
                 }}
               />
               <Button

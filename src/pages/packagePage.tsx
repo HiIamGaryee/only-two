@@ -12,53 +12,51 @@ import {
 } from "@mui/material";
 import Layout from "../Layout";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const packageList = [
   {
     id: "member",
-    name: "Member",
-    monthlyPrice: "$10 / Per Month",
-    annuallyPrice: "$100 / Per Year",
-    description:
-      "Ideal for individuals seeking to engage with eco-friendly practices and earn rewards.",
+    name: "package_one_name",
+    monthlyPrice: "$10",
+    annuallyPrice: "$100",
+    description: "package_one_desc",
     features: [
-      "Access to exclusive educational content on sustainability",
-      "Participation in eco-friendly challenges and competitions",
-      "Earn points for each eco-friendly activity, redeemable for gifts or discounts",
-      "First access to new eco workshops and webinars",
+      "package_one_feature_one",
+      "package_one_feature_two",
+      "package_one_feature_three",
+      "package_one_feature_four",
     ],
-    customers: "Preferred by eco-conscious individuals worldwide",
+    customers: "package_one_customers",
   },
   {
-    id: "premium_member",
-    name: "Premium Member",
-    monthlyPrice: "$12 / Per Month",
-    annuallyPrice: "$120 / Per Year",
-    description:
-      "Enhanced membership for those committed to making a significant impact.",
+    id: "premiumMember",
+    name: "package_two_name",
+    monthlyPrice: "$12",
+    annuallyPrice: "$120",
+    description: "package_two_desc",
     features: [
-      "All benefits of a regular member",
-      "Double points on all eco-friendly activities",
-      "Exclusive access to an AI bot that provides instant answers to eco-related queries",
-      "Priority booking for exclusive events and workshops",
+      "package_two_feature_one",
+      "package_two_feature_two",
+      "package_two_feature_three",
+      "package_two_feature_four",
     ],
-    customers: "Chosen by dedicated eco-warriors looking for maximum impact",
+    customers: "package_two_customers",
   },
   {
     id: "partner",
-    name: "Partner",
+    name: "package_three_name",
     monthlyPrice: "Custom",
     annuallyPrice: "Custom",
-    description:
-      "Suitable for businesses and organizations committed to eco-friendly products and services.",
+    description: "package_three_desc",
     features: [
-      "Opportunity to advertise your eco-friendly products on our platform",
-      "Feature your initiatives in our monthly eco-focused newsletter",
-      "Customized insights and analytics on your ad performance",
-      "Direct involvement in major eco-projects and campaigns",
-      "Strategic branding opportunities across various platform channels",
+      "package_three_feature_one",
+      "package_three_feature_two",
+      "package_three_feature_three",
+      "package_three_feature_four",
+      "package_three_feature_five",
     ],
-    customers: "Ideal for eco-conscious brands seeking a targeted audience",
+    customers: "package_three_customers",
   },
 ];
 
@@ -74,6 +72,7 @@ const PackagePage = () => {
       setPricingPeriod(newPeriod);
     }
   };
+  const { t } = useTranslation();
 
   return (
     <Layout>
@@ -90,11 +89,11 @@ const PackagePage = () => {
           fontWeight="bold"
           sx={{ mb: 2 }}
         >
-          Join over 1 Million user using Go Green
+          {t("join_million_users")}
         </Typography>
         <Typography variant="body1" align="center" sx={{ mb: 4 }}>
-          <span>14-day free trial</span> • <span>Cancel anytime</span> •{" "}
-          <span>Secure payment</span>
+          <span>{t("free_trial")}</span> • <span>{t("cancel_anytime")}</span> •{" "}
+          <span>{t("secure_payment")}</span>
         </Typography>
 
         <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
@@ -105,10 +104,10 @@ const PackagePage = () => {
             aria-label="pricing period"
           >
             <ToggleButton value="monthly" aria-label="monthly">
-              Monthly
+              {t("monthly")}
             </ToggleButton>
             <ToggleButton value="annually" aria-label="annually">
-              Annually
+              {t("annually")}
             </ToggleButton>
           </ToggleButtonGroup>
         </Box>
@@ -128,17 +127,24 @@ const PackagePage = () => {
               >
                 <CardContent>
                   <Typography variant="h5" color="primary.main" mb={1}>
-                    {pkg.name}
+                    {t(pkg.name)}
                   </Typography>
 
-                  <Typography variant="body2">{pkg.customers}</Typography>
+                  <Typography variant="body2"> {t(pkg.customers)}</Typography>
                   <Typography variant="h4" fontWeight="bold" sx={{ mb: 1 }}>
-                    {pricingPeriod === "monthly"
-                      ? pkg.monthlyPrice
-                      : pkg.annuallyPrice}
+                    <Typography variant="h4" fontWeight="bold" sx={{ mb: 1 }}>
+                      {pkg.monthlyPrice === "Custom" ||
+                      pkg.annuallyPrice === "Custom"
+                        ? t("custom")
+                        : `${
+                            pricingPeriod === "monthly"
+                              ? pkg.monthlyPrice + " / " + t("per_month")
+                              : pkg.annuallyPrice + " / " + t("per_year")
+                          }`}
+                    </Typography>
                   </Typography>
                   <Typography variant="body1" sx={{ mb: 2 }}>
-                    {pkg.description}
+                    {t(pkg.description)}
                   </Typography>
                   <Divider sx={{ mb: 2 }} />
                   <ul style={{ paddingLeft: "20px", margin: 0 }}>
@@ -151,7 +157,7 @@ const PackagePage = () => {
                           textAlign: "left",
                         }}
                       >
-                        {feature}
+                        {t(feature)}
                       </li>
                     ))}
                   </ul>
@@ -163,8 +169,8 @@ const PackagePage = () => {
                     disabled={pkg.id === "partner"}
                   >
                     {pkg.id === "partner"
-                      ? "Contact sales"
-                      : "Start 14-day free trial"}
+                      ? t("contact_sales")
+                      : t("free_trial")}
                   </Button>
                 </CardContent>
               </Card>

@@ -124,8 +124,8 @@ const DirectoryPage = () => {
       <Box
         sx={{
           bgcolor: "light.main",
-          color: "white",
-          padding: 4,
+          color: "light.light",
+          p: 4,
           minHeight: "100vh",
         }}
       >

@@ -16,8 +16,11 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import bgiMG from "../assets/home-bg4.png";
+import { useTranslation } from "react-i18next";
 
 const ReferralPage = () => {
+  const { t } = useTranslation();
+
   const [email, setEmail] = useState("");
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -73,7 +76,7 @@ const ReferralPage = () => {
             py: 1.5,
           }}
         >
-          Refer Now
+          {t("refer_now")}
         </Button>
       </Box>
 

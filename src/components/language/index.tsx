@@ -35,6 +35,8 @@ const LanguageSwitcher = () => {
       >
         <MenuItem onClick={() => changeLanguage("en")}>English</MenuItem>
         <MenuItem onClick={() => changeLanguage("zn")}>中文</MenuItem>
+        <MenuItem onClick={() => changeLanguage("hi")}>हिन्दी</MenuItem>
+        <MenuItem onClick={() => changeLanguage("pt")}>Português</MenuItem>
       </Menu>
     </>
   );

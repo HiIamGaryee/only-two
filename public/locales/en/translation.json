@@ -142,7 +142,6 @@
   "yourName": "Your Name",
   "yourEmail": "Your Email",
   "yourMessage": "Message",
-<<<<<<< HEAD
   "joinGreenMovement": "Join the Green Movement 🌱",
   "supportSustainableProducts": "Support sustainable products and ideas by referring your friends!",
   "referNow": "Refer Now",
@@ -155,8 +154,7 @@
   "enterEmailAddresses": "Enter email addresses",
   "sendInvites": "Send Invites",
   "spreadTheWord": "Spread the Word on Social Media 🌍",
-  "sharingImpact": "By sharing, you’re helping the environment and making a direct impact on sustainability projects worldwide."
-=======
+  "sharingImpact": "By sharing, you’re helping the environment and making a direct impact on sustainability projects worldwide.",
   "refer_now": "Refer Now",
   "terms_and_conditions_title": "Terms and Conditions",
   "general_conditions_title": "General Conditions",
@@ -267,5 +265,4 @@
   "phone": "Phone",
   "bio": "Bio",
   "redeem_rewards": "Redeem Rewards"
->>>>>>> 633bb76acd26bd5ee6b5b95473618709d33c7eee
 }

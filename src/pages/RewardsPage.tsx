@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Typography,
   Container,
@@ -24,8 +24,8 @@ import Image4 from "../eco images/TB.jpg";
 import Image5 from "../eco images/wrap.jpg";
 
 const RewardsPage = () => {
-  const { t } = useTranslation(); // Initialize translation hook
-  const [selectedCategory, setSelectedCategory] = useState<string>(t("all"));
+  const { t, i18n } = useTranslation(); // Initialize translation hook
+  const [selectedCategory, setSelectedCategory] = useState<string>("all"); // Default category as 'all'
   const [currency, setCurrency] = useState<string>("points");
   const [open, setOpen] = useState(false);
   const [selectedReward, setSelectedReward] = useState<any>(null);
@@ -35,16 +35,18 @@ const RewardsPage = () => {
   const rewards = [
     {
       id: 1,
-      category: t("recyclableMaterials"),
+      category: "recyclableMaterials", // Using key as category, not translated value
       name: t("Reusable Grocery Bags (Pack of 10)"),
       points: 10000,
       discount: "-5%",
       image: Image2,
-      description: t("High quality reusable grocery bags made from eco-friendly materials."),
+      description: t(
+        "High quality reusable grocery bags made from eco-friendly materials."
+      ),
     },
     {
       id: 2,
-      category: t("energySaving"),
+      category: "energySaving",
       name: t("Solar-powered Phone Charger"),
       points: 35000,
       discount: "-10%",
@@ -53,7 +55,7 @@ const RewardsPage = () => {
     },
     {
       id: 3,
-      category: t("personalCare"),
+      category: "personalCare",
       name: t("Bamboo Toothbrush Set (Pack of 4)"),
       points: 5500,
       discount: "",
@@ -62,7 +64,7 @@ const RewardsPage = () => {
     },
     {
       id: 4,
-      category: t("energySaving"),
+      category: "energySaving",
       name: t("Energy-Efficient LED Bulbs (Pack of 6)"),
       points: 20000,
       discount: "-15%",
@@ -71,7 +73,7 @@ const RewardsPage = () => {
     },
     {
       id: 5,
-      category: t("sustainableLiving"),
+      category: "sustainableLiving",
       name: t("Compostable Food Wraps (Set of 3)"),
       points: 15000,
       discount: "-8%",
@@ -80,11 +82,13 @@ const RewardsPage = () => {
     },
   ];
 
+  // Filter rewards based on selected category
   const filteredRewards =
-    selectedCategory === t("all")
+    selectedCategory === "all"
       ? rewards
       : rewards.filter((item) => item.category === selectedCategory);
 
+  // Convert points to MYR
   const convertToMYR = (points: number) => Math.floor(points / conversionRate);
 
   const handleRedeem = (reward: any) => {
@@ -101,6 +105,11 @@ const RewardsPage = () => {
     setQuantity((prev) => Math.max(1, prev + change));
   };
 
+  // Reset selected category when the language changes
+  useEffect(() => {
+    setSelectedCategory("all"); // Reset to 'all' whenever the language changes
+  }, [i18n.language]); // This effect will run whenever the language changes
+
   return (
     <Layout>
       <Box
@@ -109,12 +118,7 @@ const RewardsPage = () => {
           minHeight: "100vh",
         }}
       >
-        <Typography
-          variant="h2"
-          align="center"
-          fontWeight="bold"
-          sx={{ my: 2 }}
-        >
+        <Typography variant="h2" align="center" fontWeight="bold" sx={{ my: 2 }}>
           {t("rewardsPageTitle")}
         </Typography>
 
@@ -183,13 +187,13 @@ const RewardsPage = () => {
         <Container>
           <Grid container spacing={2} justifyContent="center" sx={{ mb: 3 }}>
             {[
-              t("all"),
-              t("recyclableMaterials"),
-              t("energySaving"),
-              t("personalCare"),
-              t("sustainableLiving"),
+              { key: "all", label: t("all") },
+              { key: "recyclableMaterials", label: t("recyclableMaterials") },
+              { key: "energySaving", label: t("energySaving") },
+              { key: "personalCare", label: t("personalCare") },
+              { key: "sustainableLiving", label: t("sustainableLiving") },
             ].map((category) => (
-              <Grid item key={category}>
+              <Grid item key={category.key}>
                 <Button
                   variant="contained"
                   color="success"
@@ -200,9 +204,9 @@ const RewardsPage = () => {
                       bgcolor: "success.main",
                     },
                   }}
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => setSelectedCategory(category.key)} // Use category key here
                 >
-                  {category}
+                  {category.label}
                 </Button>
               </Grid>
             ))}

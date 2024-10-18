@@ -142,21 +142,6 @@
   "yourName": "Your Name",
   "yourEmail": "Your Email",
   "yourMessage": "Message",
-<<<<<<< HEAD
-  "joinGreenMovement": "Join the Green Movement 🌱",
-  "supportSustainableProducts": "Support sustainable products and ideas by referring your friends!",
-  "referNow": "Refer Now",
-  "howItWorks": "How It Works",
-  "inviteFriends": "Invite your friends to join the platform. For every referral, you contribute directly to sustainable projects and receive green rewards!",
-  "yourReferrals": "Your Referrals",
-  "helpGrowCommunity": "Help us grow the green community! Share your referral link with friends, and for each sign-up, earn rewards like eco-friendly products or green credits.",
-  "copyReferralLink": "Copy Referral Link",
-  "inviteFriendsViaEmail": "Invite Friends via Email",
-  "enterEmailAddresses": "Enter email addresses",
-  "sendInvites": "Send Invites",
-  "spreadTheWord": "Spread the Word on Social Media 🌍",
-  "sharingImpact": "By sharing, you’re helping the environment and making a direct impact on sustainability projects worldwide."
-=======
   "refer_now": "Refer Now",
   "terms_and_conditions_title": "Terms and Conditions",
   "general_conditions_title": "General Conditions",
@@ -266,6 +251,18 @@
   "email": "Email",
   "phone": "Phone",
   "bio": "Bio",
-  "redeem_rewards": "Redeem Rewards"
->>>>>>> 633bb76acd26bd5ee6b5b95473618709d33c7eee
+  "redeem_rewards": "Redeem Rewards",
+  "joinGreenMovement": "Join the Green Movement 🌱",
+  "supportSustainableProducts": "Support sustainable products and ideas by referring your friends!",
+  "refer_now": "Refer Now",
+  "howItWorks": "How It Works",
+  "inviteFriends": "Invite your friends to join the platform. For every referral, you contribute directly to sustainable projects and receive green rewards!",
+  "yourReferrals": "Your Referrals",
+  "helpGrowCommunity": "Help us grow the green community! Share your referral link with friends, and for each sign-up, earn rewards like eco-friendly products or green credits.",
+  "copyReferralLink": "Copy Referral Link",
+  "inviteFriendsViaEmail": "Invite Friends via Email",
+  "enterEmailAddresses": "Enter email addresses",
+  "sendInvites": "Send Invites",
+  "spreadTheWord": "Spread the Word on Social Media 🌍",
+  "sharingImpact": "By sharing, you’re helping the environment and making a direct impact on sustainability projects worldwide."
 }

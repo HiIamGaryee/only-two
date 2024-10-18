@@ -92,7 +92,7 @@ const PackagePage = () => {
           {t("join_million_users")}
         </Typography>
         <Typography variant="body1" align="center" sx={{ mb: 4 }}>
-          <span>{t("free_trial")}</span> • <span>{t("cancel_anytime")}</span> •{" "}
+          <span>{t("free_trial")}</span> • <span>{t("cancel_anytime")}</span> •
           <span>{t("secure_payment")}</span>
         </Typography>
 

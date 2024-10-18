@@ -1,37 +1,37 @@
 import React from "react";
-import { Box, Typography, Grid, Avatar, Stack, Card } from "@mui/material";
+import { Box, Typography, Grid, Avatar, Card } from "@mui/material";
 import ProfilePicture from "../../assets/profile-avatar.jpg";
 import Layout from "../../Layout";
 import HailRoundedIcon from "@mui/icons-material/HailRounded";
 import MilitaryTechRoundedIcon from "@mui/icons-material/MilitaryTechRounded";
 import { useTranslation } from "react-i18next";
-import InsertChartOutlinedIcon from "@mui/icons-material/InsertChartOutlined";
 import ArrowForwardIosTwoToneIcon from "@mui/icons-material/ArrowForwardIosTwoTone";
 import RedeemRoundedIcon from "@mui/icons-material/RedeemRounded";
 import LocalActivityRoundedIcon from "@mui/icons-material/LocalActivityRounded";
 import { useNavigate } from "react-router-dom";
+
 const card = [
   {
     code: 1,
-    title: "Member Type",
+    title: "member_type",
     content: "Member",
     icon: <MilitaryTechRoundedIcon color="primary" />,
   },
   {
     code: 2,
-    title: "Referral",
+    title: "referral",
     content: "2",
     icon: <HailRoundedIcon color="error" />,
   },
   {
     code: 3,
-    title: "Redeem Point",
+    title: "redeem_point",
     content: "2,000",
     icon: <RedeemRoundedIcon color="warning" />,
   },
   {
     code: 4,
-    title: "Joined Event",
+    title: "joined_event",
     content: "4",
     icon: <LocalActivityRoundedIcon color="info" />,
   },
@@ -49,17 +49,17 @@ const Profile = () => {
             <Box
               sx={{
                 flexGrow: 1,
-                bgcolor: "#f4f4f4", // Sets a light background color for the whole page
+                bgcolor: "#f4f4f4",
                 display: "flex",
               }}
             >
               <Card
                 sx={{
                   width: "100%",
-                  maxWidth: 800, // Limits card size for better aesthetics
+                  maxWidth: 800,
                   p: 4,
                   borderRadius: 2,
-                  boxShadow: 3, // Adds a subtle shadow for depth
+                  boxShadow: 3,
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "start",
@@ -74,23 +74,29 @@ const Profile = () => {
                 </Box>
                 <Box sx={{ borderRadius: 2 }}>
                   <Box>
-                    <Typography variant="h6">Product Designer</Typography>
-                    <Typography variant="body2">
-                      Los Angeles, California, USA
+                    <Typography variant="h6">
+                      {t("product_designer")}
                     </Typography>
+                    <Typography variant="body2">{t("location")}</Typography>
                   </Box>
                   <Box>
-                    <Typography variant="h6">Personal Information</Typography>
-                    <Typography variant="body2">First Name: Jack</Typography>
-                    <Typography variant="body2">Last Name: Adams</Typography>
-                    <Typography variant="body2">
-                      Email: jackadams@gmail.com
+                    <Typography variant="h6">
+                      {t("personal_information")}
                     </Typography>
                     <Typography variant="body2">
-                      Phone: (213) 555-1234
+                      {t("first_name")}: Jack
                     </Typography>
                     <Typography variant="body2">
-                      Bio: Product Designer
+                      {t("last_name")}: Adams
+                    </Typography>
+                    <Typography variant="body2">
+                      {t("email")}: jackadams@gmail.com
+                    </Typography>
+                    <Typography variant="body2">
+                      {t("phone")}: (213) 555-1234
+                    </Typography>
+                    <Typography variant="body2">
+                      {t("bio")}: {t("product_designer")}
                     </Typography>
                   </Box>
                 </Box>
@@ -148,7 +154,7 @@ const Profile = () => {
                       onClick={() => navigate(`/rewards`)}
                       sx={{ cursor: "pointer" }}
                     >
-                      Redeem Rewards{" "}
+                      {t("redeem_rewards")}
                       <ArrowForwardIosTwoToneIcon sx={{ width: 12 }} />
                     </Typography>
                   )}
@@ -158,7 +164,7 @@ const Profile = () => {
                   color="text.secondary"
                   sx={{ mt: 2, mb: 1 }}
                 >
-                  {item.title}
+                  {t(item.title)}
                 </Typography>
                 <Typography variant="h6" fontWeight="bold">
                   {item.content}

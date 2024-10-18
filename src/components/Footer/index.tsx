@@ -1,29 +1,31 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Box, Typography, TextField, Button } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const footerLinks = [
   {
-    title: "SITEMAP",
+    title: "sitemap",
     links: [
-      { name: "About us", link: "/about-us" },
-      { name: "Package", link: "/package" },
-      { name: "Rewards", link: "/rewards" },
-      { name: "Blog", link: "/blog" },
+      { name: "about_us", link: "/about-us" },
+      { name: "package", link: "/package" },
+      { name: "rewards", link: "/rewards" },
+      { name: "blog", link: "/blog" },
     ],
   },
   {
-    title: "HELP",
+    title: "help",
     links: [
-      { name: "Recycling Directory", link: "/recycling-directory" },
-      { name: "FAQ", link: "/faq" },
-      { name: "Referral", link: "/referral" },
-      { name: "Terms and Conditions", link: "/terms-and-conditions" },
+      { name: "recycling_directory", link: "/recycling-directory" },
+      { name: "faq", link: "/faq" },
+      { name: "referral", link: "/referral" },
+      { name: "terms_and_conditions", link: "/terms-and-conditions" },
     ],
   },
 ];
 
 const Footer = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -56,17 +58,17 @@ const Footer = () => {
               flexDirection: { xs: "column", md: "row" },
             }}
           >
-            {footerLinks.map((section) => (
+            {footerLinks.map((section, index) => (
               <Box
-                key={section.title}
+                key={index}
                 sx={{ flex: 1, minWidth: 200, alignItems: "strat" }}
               >
                 <Typography variant="h6" sx={{ mt: 2, color: "white" }}>
-                  {section.title}
+                  {t(section.title)}
                 </Typography>
-                {section.links.map((item) => (
+                {section.links.map((item, index) => (
                   <Link
-                    key={item.name}
+                    key={index}
                     to={item.link}
                     style={{ textDecoration: "none" }}
                   >
@@ -80,7 +82,7 @@ const Footer = () => {
                         },
                       }}
                     >
-                      {item.name}
+                      {t(item.name)}
                     </Typography>
                   </Link>
                 ))}
@@ -88,14 +90,17 @@ const Footer = () => {
             ))}
           </Box>
           <Box sx={{ flex: 1, minWidth: 200, maxWidth: 400, mt: 2 }}>
-            <Typography variant="h6" sx={{ color: "white" }}>
-              SUBSCRIBE
+            <Typography
+              variant="h6"
+              sx={{ color: "white", textDecoration: "uppercase" }}
+            >
+              {t("subscribe")}
             </Typography>
             <Box sx={{ display: "flex", mb: 2 }}>
               <TextField
                 variant="outlined"
                 size="small"
-                placeholder="Enter email address"
+                placeholder={t("enter_email_address")}
                 sx={{
                   bgcolor: "white",
                   borderRadius: 1,
@@ -105,25 +110,29 @@ const Footer = () => {
               />
               <Button
                 variant="contained"
-                sx={{ bgcolor: "#ff5722", color: "white" }}
+                sx={{
+                  bgcolor: "#ff5722",
+                  color: "white",
+                  textDecoration: "uppercase",
+                }}
               >
-                SEND
+                {t("send")}
               </Button>
             </Box>
             <Box sx={{ display: "flex", gap: 1 }}>
               <Link to="#" style={{ textDecoration: "none", color: "white" }}>
                 <Typography variant="body2" color="light.main">
-                  Facebook
+                  {t("facebook")}
                 </Typography>
               </Link>
               <Link to="#" style={{ textDecoration: "none", color: "white" }}>
                 <Typography variant="body2" color="light.main">
-                  Twitter
+                  {t("twitter")}
                 </Typography>
               </Link>
               <Link to="#" style={{ textDecoration: "none", color: "white" }}>
                 <Typography variant="body2" color="light.main">
-                  LinkedIn
+                  {t("linkedin")}
                 </Typography>
               </Link>
             </Box>
@@ -132,7 +141,7 @@ const Footer = () => {
       </Box>
       <Box sx={{ width: "100%", mt: 4, textAlign: "center" }}>
         <Typography variant="body2" sx={{ color: "white" }}>
-          © 2024 All rights reserved by Go Green Sdn Bhd .
+          {t("all_rights_reserved")}
         </Typography>
       </Box>
     </Box>

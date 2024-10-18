@@ -63,7 +63,6 @@ export const router = createBrowserRouter([
         path: "/rewards",
         element: (
           <ProtectedRoute>
-            {" "}
             <RewardsPage />
           </ProtectedRoute>
         ),

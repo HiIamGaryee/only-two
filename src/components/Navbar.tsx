@@ -22,24 +22,24 @@ const Navbar = () => {
 
   const navBarLinks = [
     {
-      name: "Home",
+      name: "home",
       icon: <CottageRoundedIcon />,
       link: "/",
     },
     {
-      name: "Profile",
+      name: "profile",
       icon: <AccountCircleRoundedIcon />,
       link: "/member/profile",
     },
     user
       ? {
-          name: "Logout",
+          name: "logout",
           icon: <LogoutRoundedIcon />,
           link: "#",
           onClick: handleLogout,
         }
       : {
-          name: "Login",
+          name: "login",
           icon: <LoginIcon />,
           link: "/login",
         },
@@ -82,7 +82,7 @@ const Navbar = () => {
                   // color: isActive ? "#383f00" : "#ebebeb",
                 }}
               >
-                {item.name}
+                {t(item.name)}
               </Typography>
             </NavLink>
           ))}

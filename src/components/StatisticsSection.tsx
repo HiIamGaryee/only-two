@@ -1,8 +1,11 @@
 import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import homeBg from "../assets/home-bg3.png";
+import { useTranslation } from "react-i18next";
 
 const StatisticsSection = () => {
+  const { t } = useTranslation();
+
   return (
     <Box
       sx={{
@@ -26,6 +29,7 @@ const StatisticsSection = () => {
           </Typography>
           <Typography variant="h5" color="light.main">
             Partnerships
+            {t("partnerships")}
           </Typography>
         </Grid>
         <Grid item xs={12} sm={3} sx={{ textAlign: "center" }}>
@@ -34,10 +38,10 @@ const StatisticsSection = () => {
             sx={{ fontWeight: "bold" }}
             color="warning.main"
           >
-            1 Million
+            1 {t("million")}
           </Typography>
           <Typography variant="h5" color="light.main">
-            Members Joined
+            {t("members_joined")}
           </Typography>
         </Grid>
         <Grid item xs={12} sm={3} sx={{ textAlign: "center" }}>
@@ -49,7 +53,7 @@ const StatisticsSection = () => {
             15
           </Typography>
           <Typography variant="h5" color="light.main">
-            Event Organized
+            {t("event_organized")}
           </Typography>
         </Grid>
         <Grid item xs={12} sm={3} sx={{ textAlign: "center" }}>
@@ -61,7 +65,7 @@ const StatisticsSection = () => {
             99
           </Typography>
           <Typography variant="h5" color="light.main">
-            Awards Won
+            {t("awards")}
           </Typography>
         </Grid>
       </Grid>

@@ -1,3 +1,4 @@
+import React from "react";
 import { Box, Button, TextField, Link, Paper, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -11,16 +12,15 @@ import { useNavigate } from "react-router-dom";
 const SignUp = () => {
   const { t } = useTranslation();
   const validationSchema = Yup.object({
-    email: Yup.string()
-      .required("Email is required")
-      .email("Invalid email address"),
-    password: Yup.string().required("Password is required"),
+    email: Yup.string().required(t("email_required")).email(t("invalid_email")),
+    password: Yup.string().required(t("password_required")),
     password_confirmation: Yup.string()
-      .oneOf([Yup.ref("password"), undefined], "Passwords must match")
-      .required("Password confirmation is required"),
-    mobile_no: Yup.string().required("Mobile number is required"),
-    mobile_prefix_no: Yup.string().required("Mobile prefix is required"),
+      .oneOf([Yup.ref("password"), undefined], t("passwords_must_match"))
+      .required(t("password_confirmation_required")),
+    mobile_no: Yup.string().required(t("mobile_number_required")),
+    mobile_prefix_no: Yup.string().required(t("mobile_prefix_required")),
   });
+
   const navigate = useNavigate();
 
   const {
@@ -63,7 +63,7 @@ const SignUp = () => {
             onClick={() => navigate(`/`)}
           />
           <Box>
-            <Typography variant="h5">Sign Up</Typography>
+            <Typography variant="h5">{t("sign_up")}</Typography>
             <Typography variant="body2">{t("welcome_desc")}</Typography>
           </Box>
         </Box>
@@ -71,35 +71,29 @@ const SignUp = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <TextField
             {...register("email")}
-            placeholder="Email address"
+            placeholder={t("email_placeholder")}
             type="email"
             fullWidth
             error={Boolean(errors.email)}
             helperText={errors.email ? errors.email.message : ""}
             variant="outlined"
-            sx={{
-              mb: 2,
-              background: "#fff",
-            }}
+            sx={{ mb: 2, background: "#fff" }}
           />
 
           <TextField
             {...register("password")}
-            placeholder="Password"
+            placeholder={t("password_placeholder")}
             type="password"
             fullWidth
             error={Boolean(errors.password)}
             helperText={errors.password ? errors.password.message : ""}
             variant="outlined"
-            sx={{
-              mb: 1,
-              background: "#fff",
-            }}
+            sx={{ mb: 1, background: "#fff" }}
           />
 
           <TextField
             {...register("password_confirmation")}
-            placeholder="Confirm Password"
+            placeholder={t("confirm_password_placeholder")}
             type="password"
             fullWidth
             error={Boolean(errors.password_confirmation)}
@@ -109,46 +103,38 @@ const SignUp = () => {
                 : ""
             }
             variant="outlined"
-            sx={{
-              mb: 1,
-              background: "#fff",
-            }}
+            sx={{ mb: 1, background: "#fff" }}
           />
 
           <TextField
             {...register("mobile_prefix_no")}
-            placeholder="Mobile Prefix"
+            placeholder={t("mobile_prefix_placeholder")}
             fullWidth
             error={Boolean(errors.mobile_prefix_no)}
             helperText={
               errors.mobile_prefix_no ? errors.mobile_prefix_no.message : ""
             }
             variant="outlined"
-            sx={{
-              mb: 1,
-              background: "#fff",
-            }}
+            sx={{ mb: 1, background: "#fff" }}
           />
 
           <TextField
             {...register("mobile_no")}
-            placeholder="Mobile Number"
+            placeholder={t("mobile_number_placeholder")}
             fullWidth
             error={Boolean(errors.mobile_no)}
             helperText={errors.mobile_no ? errors.mobile_no.message : ""}
             variant="outlined"
-            sx={{
-              mb: 1,
-              background: "#fff",
-            }}
+            sx={{ mb: 1, background: "#fff" }}
           />
-
-          <Button variant="contained" fullWidth sx={{ mt: 2 }} type="submit">
-            Sign Up
-          </Button>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Button variant="contained" sx={{ mt: 2 }} type="submit">
+              {t("sign_up")}
+            </Button>
+          </Box>
           <Box mt={2}>
             <Link href="/login" underline="hover" sx={{ color: "#000" }}>
-              Already have an account? Sign in
+              {t("already_have_account")}
             </Link>
           </Box>
         </form>

@@ -8,24 +8,26 @@ import usq1Img from "../../assets/go-green/usq-1.svg";
 import usq3Img from "../../assets/go-green/usq-3.svg";
 import StatisticsSection from "../../components/StatisticsSection";
 import TestimonialsCard from "../../components/TestimonialsCard";
+import { useTranslation } from "react-i18next";
 
 const USPList = [
   {
     img: usq1Img,
-    name: "Partnerships with Eco Organizations",
+    name: "partnerships_with_eco_organizations",
   },
   {
     img: usq2Img,
-    name: "Green Blog and News Updates",
+    name: "green_blog_and_news_updates",
   },
   {
     img: usq3Img,
-    name: "Eco Rewards Program ",
+    name: "eco_rewards_program",
   },
 ];
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <Layout>
@@ -61,6 +63,7 @@ const HomePage = () => {
                     sx={{
                       display: "flex",
                       flexWrap: "wrap",
+                      flexDirection: { xs: "row", md: "column" },
                       justifyContent: { xs: "center", md: "start" },
                     }}
                   >
@@ -72,7 +75,7 @@ const HomePage = () => {
                       variant="h3"
                       fontWeight="bold"
                     >
-                      It's the New Black
+                      {t("its_the_new_black")}
                     </Typography>
                   </Box>
                 </Box>
@@ -86,8 +89,7 @@ const HomePage = () => {
                     pr: { xs: 2, md: 12 },
                   }}
                 >
-                  Your trust with us starts from knowing your eco-friendly
-                  choices.
+                  {t("home_page_subtitle")}
                 </Typography>
 
                 <Box
@@ -101,7 +103,7 @@ const HomePage = () => {
                     variant="contained"
                     onClick={() => navigate(`/about-us`)}
                   >
-                    About Us
+                    {t("learn_more")}
                   </Button>
                 </Box>
               </Stack>
@@ -142,14 +144,13 @@ const HomePage = () => {
         }}
       >
         <Typography variant="h4" fontWeight="bold" mb={2}>
-          Our Selling Point
+          {t("our_selling_point")}
         </Typography>
         <Typography px={8} textAlign="center" mb={6}>
-          Our cyrpto payments and tokenized rewards cater to tech-savvy
-          customers, enhacing user engagement and loyalty.
+          {t("our_selling_point_desc")}
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center", width: "auto" }}>
-          <Grid container>
+          <Grid container spacing={2}>
             {USPList.map((item, index) => (
               <Grid item xs={12} md={4} key={index}>
                 <Box
@@ -176,7 +177,7 @@ const HomePage = () => {
                     }}
                   />
 
-                  <Typography>{item.name}</Typography>
+                  <Typography>{t(item.name)}</Typography>
                 </Box>
               </Grid>
             ))}

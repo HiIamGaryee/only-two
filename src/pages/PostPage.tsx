@@ -71,18 +71,19 @@ const PostPage = () => {
           }}
         >
           <Typography
-            variant="h2"
+            variant="h3"
             fontWeight="bold"
             gutterBottom
+            mt={4}
             sx={{ color: "light.main", textAlign: "center" }}
           >
-            {t("postTitle")} {/* Use translation for post title */}
+            {t("post_title")}
           </Typography>
           <Typography
             variant="body1"
             sx={{ mb: 2, color: "light.main", textAlign: "center" }}
           >
-            {t("postDescription")} {/* Use translation for post description */}
+            {t("post_desc")}
           </Typography>
         </Box>
       </Box>
@@ -93,38 +94,38 @@ const PostPage = () => {
             variant="h4"
             sx={{ mb: 2, color: "#388e3c", fontWeight: "bold" }}
           >
-            {t("introTitle")} {/* Use translation for introduction title */}
+            {t("intro_title")}
           </Typography>
           <Typography variant="body1" sx={{ mb: 4 }}>
-            {t("introDescription")} {/* Use translation for introduction description */}
+            {t("intro_desc")}
           </Typography>
 
           <Typography
             variant="h5"
             sx={{ mb: 2, color: "#388e3c", fontWeight: "bold" }}
           >
-            {t("simpleHabitsTitle")} {/* Use translation for simple habits title */}
+            {t("simpleHabitsTitle")}
           </Typography>
           <Typography variant="body1" sx={{ mb: 4 }}>
-            {t("simpleHabitsDescription")} {/* Use translation for habits description */}
+            {t("simpleHabitsDescription")}
           </Typography>
 
           <ul style={{ lineHeight: 2, color: "#388e3c" }}>
-            <li>{t("habit1")}</li> {/* Habit 1 */}
-            <li>{t("habit2")}</li> {/* Habit 2 */}
-            <li>{t("habit3")}</li> {/* Habit 3 */}
-            <li>{t("habit4")}</li> {/* Habit 4 */}
-            <li>{t("habit5")}</li> {/* Habit 5 */}
+            <li>{t("habit1")}</li>
+            <li>{t("habit2")}</li>
+            <li>{t("habit3")}</li>
+            <li>{t("habit4")}</li>
+            <li>{t("habit5")}</li>
           </ul>
 
           <Typography
             variant="h5"
             sx={{ mt: 4, mb: 2, color: "#388e3c", fontWeight: "bold" }}
           >
-            {t("impactTitle")} {/* Use translation for impact title */}
+            {t("impactTitle")}
           </Typography>
           <Typography variant="body1" sx={{ mb: 4 }}>
-            {t("impactDescription")} {/* Use translation for impact description */}
+            {t("impactDescription")}
           </Typography>
 
           <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
@@ -133,7 +134,7 @@ const PostPage = () => {
               sx={{ bgcolor: "success.main", color: "light.main" }}
               onClick={handleOpen}
             >
-              {t("shareThisPost")} {/* Use translation for Share button */}
+              {t("shareThisPost")}
             </Button>
           </Box>
         </Box>

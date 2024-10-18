@@ -72,7 +72,7 @@ const FaqPage = () => {
         }}
       >
         <Box sx={{ maxWidth: 800, margin: "auto", textAlign: "center" }}>
-          <Typography variant="h4" gutterBottom fontWeight="bold">
+          <Typography variant="h4" gutterBottom fontWeight="bold" mb={4}>
             {t("faq")}
           </Typography>
           {faqList.map((faq, index) => (
@@ -91,9 +91,7 @@ const FaqPage = () => {
                 aria-controls={`panel${index}bh-content`}
                 id={`panel${index}bh-header`}
               >
-                <Typography variant="h6" sx={{ flexShrink: 0 }}>
-                  {t(faq.code)}
-                </Typography>
+                <Typography variant="h6">{t(faq.code)}</Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography variant="body2" textAlign="left">

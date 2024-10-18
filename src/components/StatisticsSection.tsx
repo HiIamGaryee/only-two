@@ -18,7 +18,7 @@ const StatisticsSection = () => {
         webkitBackdropFilter: "blur(12px)",
       }}
     >
-      <Grid container justifyContent="center" alignItems="center">
+      <Grid container justifyContent="center" alignItems="center" spacing={4}>
         <Grid item xs={12} sm={3} sx={{ textAlign: "center" }}>
           <Typography
             variant="h3"
